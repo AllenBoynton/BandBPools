@@ -49,7 +49,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
@@ -164,25 +164,21 @@
                                 <rect key="frame" x="91.666666666666686" y="450.66666666666674" width="192" height="149"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LHR-ZE-MgH" userLabel="userNameTextField">
-                                        <rect key="frame" x="0.0" y="8.3333333333333144" width="192" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="b75-Zw-1YT"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="8.3333333333333144" width="192" height="32.333333333333336"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ams-kM-Rx4" userLabel="passwordTextField">
-                                        <rect key="frame" x="0.0" y="58.333333333333314" width="192" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ake-AM-PxN"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="60.666666666666629" width="192" height="32.333333333333343"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOp-JN-91o" customClass="DesignableButtons" customModule="BandBPools" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="108.33333333333331" width="192" height="25"/>
+                                        <rect key="frame" x="0.0" y="112.99999999999994" width="192" height="25"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="pVB-xJ-w65"/>
@@ -217,6 +213,7 @@
                                     <constraint firstItem="ams-kM-Rx4" firstAttribute="centerX" secondItem="NSb-6m-LoK" secondAttribute="centerX" id="i0c-yf-I8Z"/>
                                     <constraint firstItem="ams-kM-Rx4" firstAttribute="width" secondItem="LHR-ZE-MgH" secondAttribute="width" id="jp5-dD-slb"/>
                                     <constraint firstItem="LHR-ZE-MgH" firstAttribute="centerX" secondItem="NSb-6m-LoK" secondAttribute="centerX" id="rlV-Yq-wDL"/>
+                                    <constraint firstItem="ams-kM-Rx4" firstAttribute="height" secondItem="LHR-ZE-MgH" secondAttribute="height" id="sLd-Yc-Mua"/>
                                     <constraint firstItem="LHR-ZE-MgH" firstAttribute="top" secondItem="NSb-6m-LoK" secondAttribute="top" constant="8" id="vky-82-yQu"/>
                                     <constraint firstItem="SOp-JN-91o" firstAttribute="width" secondItem="ams-kM-Rx4" secondAttribute="width" id="yeI-Xv-yNF"/>
                                 </constraints>
@@ -238,10 +235,15 @@
                             <constraint firstItem="auo-SO-TT7" firstAttribute="leading" secondItem="H51-Dd-Vbb" secondAttribute="leading" id="Qk4-7N-Dsj"/>
                             <constraint firstItem="NSb-6m-LoK" firstAttribute="width" secondItem="0Um-rX-NV9" secondAttribute="width" multiplier="0.75" id="b0E-zg-Us9"/>
                             <constraint firstItem="auo-SO-TT7" firstAttribute="height" secondItem="H51-Dd-Vbb" secondAttribute="height" multiplier="0.05" id="gwk-Un-rxs"/>
+                            <constraint firstItem="LHR-ZE-MgH" firstAttribute="height" secondItem="H51-Dd-Vbb" secondAttribute="height" multiplier="0.04" id="sPq-nq-Jol"/>
                             <constraint firstItem="NSb-6m-LoK" firstAttribute="top" secondItem="0Um-rX-NV9" secondAttribute="bottom" constant="30" id="tbY-Vr-GeX"/>
                             <constraint firstItem="NSb-6m-LoK" firstAttribute="height" secondItem="0Um-rX-NV9" secondAttribute="height" id="zVh-nM-tl8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="ams-kM-Rx4" id="DMJ-Ze-utw"/>
+                        <outlet property="userTextField" destination="LHR-ZE-MgH" id="03J-y3-tAZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zk4-Ta-3ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

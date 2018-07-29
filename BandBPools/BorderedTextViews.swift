@@ -8,12 +8,17 @@
 
 import UIKit
 
-class BorderedTextViews: UITextView {
+extension UITextField {
     
-    override func awakeFromNib() {
-//        self.layer.cornerRadius = 3.0
-        self.layer.borderWidth = 2.0
-        self.layer.borderColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 1.0).cgColor
+    func setPadding() {
+        
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: self.frame.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+        
+        self.layer.cornerRadius = 8.0
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0).cgColor
         self.clipsToBounds = true
     }
 }
