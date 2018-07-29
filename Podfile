@@ -10,8 +10,8 @@ target 'BandBPools' do
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
 
-    pod 'FacebookCore'
-    pod 'FBSDKLoginKit'
+  # Swift 3.0 - Xcode 8
+    pod 'SwiftMessages'
 
   target 'BandBPoolsTests' do
     inherit! :search_paths
