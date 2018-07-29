@@ -8,6 +8,7 @@ target 'BandBPools' do
   # Pods for BandBPools
 
 pod 'Firebase/Core'
+pod 'Firebase/Auth'
 
   target 'BandBPoolsTests' do
     inherit! :search_paths

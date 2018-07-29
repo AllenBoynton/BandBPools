@@ -16,7 +16,7 @@ extension UITextField {
         self.leftView = paddingView
         self.leftViewMode = .always
         
-        self.layer.cornerRadius = 8.0
+        self.layer.cornerRadius = 5.0
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0).cgColor
         self.clipsToBounds = true
