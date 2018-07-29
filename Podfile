@@ -7,8 +7,11 @@ target 'BandBPools' do
 
   # Pods for BandBPools
 
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+
+    pod 'FacebookCore'
+    pod 'FBSDKLoginKit'
 
   target 'BandBPoolsTests' do
     inherit! :search_paths

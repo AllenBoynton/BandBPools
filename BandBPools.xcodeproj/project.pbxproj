@@ -23,6 +23,7 @@
 		0F4503CA210C2D5500BF296F /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C4210C2D5500BF296F /* DropShadow.swift */; };
 		0F4503CD210D324900BF296F /* BorderedTextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503CC210D324900BF296F /* BorderedTextViews.swift */; };
 		0F4503CF210D446600BF296F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F4503CE210D446600BF296F /* GoogleService-Info.plist */; };
+		0FB39387210D928C00A912DB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FB39386210D928C00A912DB /* Default-568h@2x.png */; };
 		ED587F2F554A8B92947E2883 /* Pods_BandBPools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6110D7CCA4D4AE2DEEBA32 /* Pods_BandBPools.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		0F4503C4210C2D5500BF296F /* DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
 		0F4503CC210D324900BF296F /* BorderedTextViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedTextViews.swift; sourceTree = "<group>"; };
 		0F4503CE210D446600BF296F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0FB39386210D928C00A912DB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		22B32BB9345BE65D29C9611E /* Pods-BandBPoolsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BandBPoolsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BandBPoolsTests/Pods-BandBPoolsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E6110D7CCA4D4AE2DEEBA32 /* Pods_BandBPools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BandBPools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		506C6F2EC9E6FE45CF77C395 /* Pods-BandBPoolsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BandBPoolsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BandBPoolsTests/Pods-BandBPoolsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		0F0B3070210C16B100F59639 = {
 			isa = PBXGroup;
 			children = (
+				0FB39386210D928C00A912DB /* Default-568h@2x.png */,
 				0F0B307B210C16B100F59639 /* BandBPools */,
 				0F0B3090210C16B200F59639 /* BandBPoolsTests */,
 				0F0B307A210C16B100F59639 /* Products */,
@@ -306,6 +309,7 @@
 				0F0B3087210C16B200F59639 /* LaunchScreen.storyboard in Resources */,
 				0F4503CF210D446600BF296F /* GoogleService-Info.plist in Resources */,
 				0F0B3084210C16B200F59639 /* Assets.xcassets in Resources */,
+				0FB39387210D928C00A912DB /* Default-568h@2x.png in Resources */,
 				0F0B3082210C16B100F59639 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,12 +367,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BandBPools/Pods-BandBPools-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",

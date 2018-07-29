@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var newUserBtn: DesignableButtons!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +23,36 @@ class ViewController: UIViewController {
         moveKeyboard()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil {
+            self.presentLoggedInScreen()
+        } else {
+            emailField.text = ""
+            passwordField.text = ""
+        }
+    }
+    
     @IBAction func loginTapped(_ sender: Any) {
+        if let name = emailField.text, let password = passwordField.text {
+            Auth.auth().signIn(withEmail: name + "@bandbpoolsinc.com", password: password, completion: { (user, error) in
+                if let firebaseError = error {
+                    print(firebaseError.localizedDescription)
+                    return
+                }
+                self.presentLoggedInScreen()
+                print("Success!")
+            })
+        }
+    }
+    
+    @IBAction func forgotTapped(_ sender: Any) {
         
+    }
+    
+    func presentLoggedInScreen() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC: LoginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        self.present(loginVC, animated: true, completion: nil)
     }
     
     func moveKeyboard() {
