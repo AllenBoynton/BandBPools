@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mc-hp-OBt" userLabel="LogoContainer">
-                                <rect key="frame" x="59" y="231.66666666666663" width="256" height="149"/>
+                                <rect key="frame" x="59.666666666666657" y="231.66666666666663" width="255.99999999999997" height="149"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B&amp;BLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5SX-lb-bls">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="149"/>
@@ -48,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9O-Xt-t7W" userLabel="fieldContainer">
-                                <rect key="frame" x="59" y="430.66666666666669" width="256" height="223.66666666666669"/>
+                                <rect key="frame" x="59.666666666666657" y="430.66666666666669" width="255.99999999999997" height="223.33333333333331"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zhX-QK-0WI" userLabel="emailTextField">
                                         <rect key="frame" x="0.0" y="8.6666666666666288" width="256" height="40.666666666666664"/>
@@ -58,14 +58,14 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-Tv-XUs" userLabel="passwordTextField">
-                                        <rect key="frame" x="0.0" y="59.333333333333314" width="256" height="41.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="59.333333333333314" width="256" height="40.666666666666657"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOY-lu-4Kp" customClass="DesignableButtons" customModule="BandBPools" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="191.99999999999994" width="256" height="25"/>
+                                        <rect key="frame" x="0.0" y="189.99999999999994" width="256" height="25"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Fyb-XB-ZI5"/>
@@ -90,7 +90,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZJ-Ea-L1F" customClass="DesignableButtons" customModule="BandBPools" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="140.66666666666669" width="256" height="41.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="139.99999999999994" width="256" height="40"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                         <state key="normal" title="Login">
@@ -162,10 +162,45 @@
             </objects>
             <point key="canvasLocation" x="844" y="132.26600985221674"/>
         </scene>
-        <!--LoginVC-->
+        <!--Main MenuCVVC-->
+        <scene sceneID="c38-1m-hq5">
+            <objects>
+                <collectionViewController storyboardIdentifier="MainMenuCVVC" id="Pcy-fR-29K" customClass="MainMenuCVVC" customModule="BandBPools" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Mw1-bn-giP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ud8-zl-qXR">
+                            <size key="itemSize" width="163" height="189"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Xnw-AP-ZgU">
+                                <rect key="frame" x="0.0" y="0.0" width="163" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="163" height="189"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Pcy-fR-29K" id="4F1-Dr-Tix"/>
+                            <outlet property="delegate" destination="Pcy-fR-29K" id="r72-Bo-oHJ"/>
+                        </connections>
+                    </collectionView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9f-fV-z1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661.5999999999999" y="132.26600985221674"/>
+        </scene>
+        <!--MenuVC-->
         <scene sceneID="re5-M8-g6m">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="Jxp-BU-5bo" customClass="LoginVC" customModule="BandBPools" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuVC" id="Jxp-BU-5bo" customClass="MenuVC" customModule="BandBPools" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mq4-Mt-CPS"/>
                         <viewControllerLayoutGuide type="bottom" id="vQG-UA-2cp"/>

@@ -14,8 +14,9 @@
 		0F0B3084210C16B200F59639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0B3083210C16B200F59639 /* Assets.xcassets */; };
 		0F0B3087210C16B200F59639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0B3085210C16B200F59639 /* LaunchScreen.storyboard */; };
 		0F0B3092210C16B200F59639 /* BandBPoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B3091210C16B200F59639 /* BandBPoolsTests.swift */; };
-		0F0B30A2210C2B3600F59639 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B30A1210C2B3600F59639 /* LoginVC.swift */; };
+		0F0B30A2210C2B3600F59639 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B30A1210C2B3600F59639 /* MenuVC.swift */; };
 		0F35F516210E4BA5006C796F /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35F515210E4BA5006C796F /* MessageView.swift */; };
+		0F35F518210E57A9006C796F /* MainMenuCVVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35F517210E57A9006C796F /* MainMenuCVVC.swift */; };
 		0F4503C5210C2D5500BF296F /* DesignableTextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503BF210C2D5500BF296F /* DesignableTextViews.swift */; };
 		0F4503C6210C2D5500BF296F /* DesignableLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C0210C2D5500BF296F /* DesignableLabels.swift */; };
 		0F4503C7210C2D5500BF296F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C1210C2D5500BF296F /* MaterialView.swift */; };
@@ -49,8 +50,9 @@
 		0F0B308D210C16B200F59639 /* BandBPoolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BandBPoolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0B3091210C16B200F59639 /* BandBPoolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandBPoolsTests.swift; sourceTree = "<group>"; };
 		0F0B3093210C16B200F59639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F0B30A1210C2B3600F59639 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0F0B30A1210C2B3600F59639 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		0F35F515210E4BA5006C796F /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		0F35F517210E57A9006C796F /* MainMenuCVVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCVVC.swift; sourceTree = "<group>"; };
 		0F4503BF210C2D5500BF296F /* DesignableTextViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextViews.swift; sourceTree = "<group>"; };
 		0F4503C0210C2D5500BF296F /* DesignableLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabels.swift; sourceTree = "<group>"; };
 		0F4503C1210C2D5500BF296F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
@@ -144,7 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				0F0B307E210C16B100F59639 /* ViewController.swift */,
-				0F0B30A1210C2B3600F59639 /* LoginVC.swift */,
+				0F0B30A1210C2B3600F59639 /* MenuVC.swift */,
+				0F35F517210E57A9006C796F /* MainMenuCVVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -380,6 +384,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,8 +408,9 @@
 				0F35F516210E4BA5006C796F /* MessageView.swift in Sources */,
 				0F4503C9210C2D5500BF296F /* DesignableImageViews.swift in Sources */,
 				0F0B307D210C16B100F59639 /* AppDelegate.swift in Sources */,
+				0F35F518210E57A9006C796F /* MainMenuCVVC.swift in Sources */,
 				0F4503C8210C2D5500BF296F /* DesignableButtons.swift in Sources */,
-				0F0B30A2210C2B3600F59639 /* LoginVC.swift in Sources */,
+				0F0B30A2210C2B3600F59639 /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

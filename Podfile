@@ -9,6 +9,7 @@ target 'BandBPools' do
 
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
+    pod 'Firebase/Database'
 
   # Swift 3.0 - Xcode 8
     pod 'SwiftMessages'

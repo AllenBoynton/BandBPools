@@ -51,8 +51,8 @@ class ViewController: UIViewController {
     
     func presentLoggedInScreen() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginVC: LoginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        self.present(loginVC, animated: true, completion: nil)
+        let menuVC: MenuVC = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        self.present(menuVC, animated: true, completion: nil)
     }
     
     func moveKeyboard() {
