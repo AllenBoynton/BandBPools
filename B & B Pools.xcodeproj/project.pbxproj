@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01306B21340E48F2BE657BCF /* Pods_BandBPoolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB754C51779C757A2D254E7 /* Pods_BandBPoolsTests.framework */; };
 		0F05FD47214B302100F2D0CA /* UITextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F05FD46214B302100F2D0CA /* UITextFieldPadding.swift */; };
 		0F05FD49214B34AB00F2D0CA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F05FD48214B34AB00F2D0CA /* UIView.swift */; };
 		0F05FD4B214B355E00F2D0CA /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F05FD4A214B355E00F2D0CA /* RGB.swift */; };
@@ -28,7 +27,8 @@
 		0F4503CA210C2D5500BF296F /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C4210C2D5500BF296F /* DropShadow.swift */; };
 		0F4503CF210D446600BF296F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F4503CE210D446600BF296F /* GoogleService-Info.plist */; };
 		0FB39387210D928C00A912DB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FB39386210D928C00A912DB /* Default-568h@2x.png */; };
-		ED587F2F554A8B92947E2883 /* Pods_BandBPools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6110D7CCA4D4AE2DEEBA32 /* Pods_BandBPools.framework */; };
+		B6A4074EB7878100EE034F1B /* Pods_B___B_PoolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5B1E4A9A1BFE9A5C67D8C /* Pods_B___B_PoolsTests.framework */; };
+		E78DDBBE7CA69B68B496B46C /* Pods_B___B_Pools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E6225AF086A8BB2934E3D2 /* Pods_B___B_Pools.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +45,14 @@
 		0F05FD46214B302100F2D0CA /* UITextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
 		0F05FD48214B34AB00F2D0CA /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0F05FD4A214B355E00F2D0CA /* RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGB.swift; sourceTree = "<group>"; };
-		0F0B3079210C16B100F59639 /* BandBPools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BandBPools.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F0B3079210C16B100F59639 /* B & B Pools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B & B Pools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0B307C210C16B100F59639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F0B307E210C16B100F59639 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0F0B3081210C16B100F59639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F0B3083210C16B200F59639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F0B3086210C16B200F59639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F0B3088210C16B200F59639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F0B308D210C16B200F59639 /* BandBPoolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BandBPoolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F0B308D210C16B200F59639 /* B & B PoolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B & B PoolsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0B3091210C16B200F59639 /* BandBPoolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandBPoolsTests.swift; sourceTree = "<group>"; };
 		0F0B3093210C16B200F59639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F0B30A1210C2B3600F59639 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -66,12 +66,12 @@
 		0F4503C4210C2D5500BF296F /* DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
 		0F4503CE210D446600BF296F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FB39386210D928C00A912DB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		22B32BB9345BE65D29C9611E /* Pods-BandBPoolsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BandBPoolsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BandBPoolsTests/Pods-BandBPoolsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3E6110D7CCA4D4AE2DEEBA32 /* Pods_BandBPools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BandBPools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		506C6F2EC9E6FE45CF77C395 /* Pods-BandBPoolsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BandBPoolsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BandBPoolsTests/Pods-BandBPoolsTests.release.xcconfig"; sourceTree = "<group>"; };
-		809CD637D40DB5B4667D7E74 /* Pods-BandBPools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BandBPools.release.xcconfig"; path = "Pods/Target Support Files/Pods-BandBPools/Pods-BandBPools.release.xcconfig"; sourceTree = "<group>"; };
-		8E0EF010579F4223CD41EDCF /* Pods-BandBPools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BandBPools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BandBPools/Pods-BandBPools.debug.xcconfig"; sourceTree = "<group>"; };
-		8FB754C51779C757A2D254E7 /* Pods_BandBPoolsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BandBPoolsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B641647D577623F83AEB5D5 /* Pods-B & B PoolsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B & B PoolsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-B & B PoolsTests/Pods-B & B PoolsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		87678B0778B55ECE27E9D88C /* Pods-B & B Pools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B & B Pools.release.xcconfig"; path = "Pods/Target Support Files/Pods-B & B Pools/Pods-B & B Pools.release.xcconfig"; sourceTree = "<group>"; };
+		B3D426C6D6BABAE0F55C05FC /* Pods-B & B Pools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B & B Pools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-B & B Pools/Pods-B & B Pools.debug.xcconfig"; sourceTree = "<group>"; };
+		BFE5B1E4A9A1BFE9A5C67D8C /* Pods_B___B_PoolsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_B___B_PoolsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2E6225AF086A8BB2934E3D2 /* Pods_B___B_Pools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_B___B_Pools.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD9E03330B73A92DA2BE68B /* Pods-B & B PoolsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B & B PoolsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-B & B PoolsTests/Pods-B & B PoolsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED587F2F554A8B92947E2883 /* Pods_BandBPools.framework in Frameworks */,
+				E78DDBBE7CA69B68B496B46C /* Pods_B___B_Pools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01306B21340E48F2BE657BCF /* Pods_BandBPoolsTests.framework in Frameworks */,
+				B6A4074EB7878100EE034F1B /* Pods_B___B_PoolsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				0FB39386210D928C00A912DB /* Default-568h@2x.png */,
-				0F0B307B210C16B100F59639 /* BandBPools */,
-				0F0B3090210C16B200F59639 /* BandBPoolsTests */,
+				0F0B307B210C16B100F59639 /* B & B Pools */,
+				0F0B3090210C16B200F59639 /* B & B PoolsTests */,
 				0F0B307A210C16B100F59639 /* Products */,
 				8730F1F2EA802DB150F4BD71 /* Pods */,
 				86AA4F53A25E4011589FD1C5 /* Frameworks */,
@@ -109,13 +109,13 @@
 		0F0B307A210C16B100F59639 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0F0B3079210C16B100F59639 /* BandBPools.app */,
-				0F0B308D210C16B200F59639 /* BandBPoolsTests.xctest */,
+				0F0B3079210C16B100F59639 /* B & B Pools.app */,
+				0F0B308D210C16B200F59639 /* B & B PoolsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0F0B307B210C16B100F59639 /* BandBPools */ = {
+		0F0B307B210C16B100F59639 /* B & B Pools */ = {
 			isa = PBXGroup;
 			children = (
 				0F4503D0210D447D00BF296F /* Utilities */,
@@ -126,16 +126,16 @@
 				0F0B309F210C172700F59639 /* Resources */,
 				0F0B30A0210C173300F59639 /* Extensions */,
 			);
-			path = BandBPools;
+			path = "B & B Pools";
 			sourceTree = "<group>";
 		};
-		0F0B3090210C16B200F59639 /* BandBPoolsTests */ = {
+		0F0B3090210C16B200F59639 /* B & B PoolsTests */ = {
 			isa = PBXGroup;
 			children = (
 				0F0B3091210C16B200F59639 /* BandBPoolsTests.swift */,
 				0F0B3093210C16B200F59639 /* Info.plist */,
 			);
-			path = BandBPoolsTests;
+			path = "B & B PoolsTests";
 			sourceTree = "<group>";
 		};
 		0F0B309C210C16D900F59639 /* AppDelegate */ = {
@@ -217,8 +217,8 @@
 		86AA4F53A25E4011589FD1C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3E6110D7CCA4D4AE2DEEBA32 /* Pods_BandBPools.framework */,
-				8FB754C51779C757A2D254E7 /* Pods_BandBPoolsTests.framework */,
+				E2E6225AF086A8BB2934E3D2 /* Pods_B___B_Pools.framework */,
+				BFE5B1E4A9A1BFE9A5C67D8C /* Pods_B___B_PoolsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,10 +226,10 @@
 		8730F1F2EA802DB150F4BD71 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8E0EF010579F4223CD41EDCF /* Pods-BandBPools.debug.xcconfig */,
-				809CD637D40DB5B4667D7E74 /* Pods-BandBPools.release.xcconfig */,
-				22B32BB9345BE65D29C9611E /* Pods-BandBPoolsTests.debug.xcconfig */,
-				506C6F2EC9E6FE45CF77C395 /* Pods-BandBPoolsTests.release.xcconfig */,
+				B3D426C6D6BABAE0F55C05FC /* Pods-B & B Pools.debug.xcconfig */,
+				87678B0778B55ECE27E9D88C /* Pods-B & B Pools.release.xcconfig */,
+				4B641647D577623F83AEB5D5 /* Pods-B & B PoolsTests.debug.xcconfig */,
+				FBD9E03330B73A92DA2BE68B /* Pods-B & B PoolsTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -237,9 +237,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0F0B3078210C16B100F59639 /* BandBPools */ = {
+		0F0B3078210C16B100F59639 /* B & B Pools */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F0B3096210C16B200F59639 /* Build configuration list for PBXNativeTarget "BandBPools" */;
+			buildConfigurationList = 0F0B3096210C16B200F59639 /* Build configuration list for PBXNativeTarget "B & B Pools" */;
 			buildPhases = (
 				0674933083A4F83E9C207312 /* [CP] Check Pods Manifest.lock */,
 				0F0B3075210C16B100F59639 /* Sources */,
@@ -251,14 +251,14 @@
 			);
 			dependencies = (
 			);
-			name = BandBPools;
+			name = "B & B Pools";
 			productName = BandBPools;
-			productReference = 0F0B3079210C16B100F59639 /* BandBPools.app */;
+			productReference = 0F0B3079210C16B100F59639 /* B & B Pools.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0F0B308C210C16B200F59639 /* BandBPoolsTests */ = {
+		0F0B308C210C16B200F59639 /* B & B PoolsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F0B3099210C16B200F59639 /* Build configuration list for PBXNativeTarget "BandBPoolsTests" */;
+			buildConfigurationList = 0F0B3099210C16B200F59639 /* Build configuration list for PBXNativeTarget "B & B PoolsTests" */;
 			buildPhases = (
 				4CC8DEFEA04C8F68F50B33C9 /* [CP] Check Pods Manifest.lock */,
 				0F0B3089210C16B200F59639 /* Sources */,
@@ -270,9 +270,9 @@
 			dependencies = (
 				0F0B308F210C16B200F59639 /* PBXTargetDependency */,
 			);
-			name = BandBPoolsTests;
+			name = "B & B PoolsTests";
 			productName = BandBPoolsTests;
-			productReference = 0F0B308D210C16B200F59639 /* BandBPoolsTests.xctest */;
+			productReference = 0F0B308D210C16B200F59639 /* B & B PoolsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -307,8 +307,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0F0B3078210C16B100F59639 /* BandBPools */,
-				0F0B308C210C16B200F59639 /* BandBPoolsTests */,
+				0F0B3078210C16B100F59639 /* B & B Pools */,
+				0F0B308C210C16B200F59639 /* B & B PoolsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -347,7 +347,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BandBPools-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-B & B Pools-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -365,7 +365,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BandBPoolsTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-B & B PoolsTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -378,9 +378,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BandBPools/Pods-BandBPools-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-B & B Pools/Pods-B & B Pools-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -388,14 +388,14 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BandBPools/Pods-BandBPools-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-B & B Pools/Pods-B & B Pools-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -435,7 +435,7 @@
 /* Begin PBXTargetDependency section */
 		0F0B308F210C16B200F59639 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0F0B3078210C16B100F59639 /* BandBPools */;
+			target = 0F0B3078210C16B100F59639 /* B & B Pools */;
 			targetProxy = 0F0B308E210C16B200F59639 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -576,12 +576,12 @@
 		};
 		0F0B3097210C16B200F59639 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E0EF010579F4223CD41EDCF /* Pods-BandBPools.debug.xcconfig */;
+			baseConfigurationReference = B3D426C6D6BABAE0F55C05FC /* Pods-B & B Pools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 979TTQWNS8;
-				INFOPLIST_FILE = BandBPools/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/B & B Pools/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,12 +595,12 @@
 		};
 		0F0B3098210C16B200F59639 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 809CD637D40DB5B4667D7E74 /* Pods-BandBPools.release.xcconfig */;
+			baseConfigurationReference = 87678B0778B55ECE27E9D88C /* Pods-B & B Pools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 979TTQWNS8;
-				INFOPLIST_FILE = BandBPools/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/B & B Pools/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,7 +614,7 @@
 		};
 		0F0B309A210C16B200F59639 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22B32BB9345BE65D29C9611E /* Pods-BandBPoolsTests.debug.xcconfig */;
+			baseConfigurationReference = 4B641647D577623F83AEB5D5 /* Pods-B & B PoolsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -630,13 +630,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BandBPools.app/BandBPools";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/B & B Pools.app/B & B Pools";
 			};
 			name = Debug;
 		};
 		0F0B309B210C16B200F59639 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 506C6F2EC9E6FE45CF77C395 /* Pods-BandBPoolsTests.release.xcconfig */;
+			baseConfigurationReference = FBD9E03330B73A92DA2BE68B /* Pods-B & B PoolsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -652,7 +652,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BandBPools.app/BandBPools";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/B & B Pools.app/B & B Pools";
 			};
 			name = Release;
 		};
@@ -668,7 +668,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F0B3096210C16B200F59639 /* Build configuration list for PBXNativeTarget "BandBPools" */ = {
+		0F0B3096210C16B200F59639 /* Build configuration list for PBXNativeTarget "B & B Pools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F0B3097210C16B200F59639 /* Debug */,
@@ -677,7 +677,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F0B3099210C16B200F59639 /* Build configuration list for PBXNativeTarget "BandBPoolsTests" */ = {
+		0F0B3099210C16B200F59639 /* Build configuration list for PBXNativeTarget "B & B PoolsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F0B309A210C16B200F59639 /* Debug */,
