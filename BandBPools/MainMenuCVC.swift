@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class MainMenuCVVC: UICollectionViewController {
+class MainMenuCVC: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

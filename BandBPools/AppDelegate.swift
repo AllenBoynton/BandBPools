@@ -20,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        let navigationBarAppearance = UINavigationBar.appearance()
+        
+        navigationBarAppearance.barTintColor = UIColor.rgb(red: 79, green: 79, blue: 79)
+//        navigationBarAppearance.tintColor = UIColor.rgb(red: 255, green: 255, blue: 255)
+        
+        // change navigation item title color
+//        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.blue]
+        
         return true
     }
     
