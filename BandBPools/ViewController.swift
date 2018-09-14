@@ -15,11 +15,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     
+    override func viewWillAppear(_ animated: Bool) {
+        emailField.text = ""
+        passwordField.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailField.setPadding()
-        passwordField.setPadding()
         moveKeyboard()
     }
     
