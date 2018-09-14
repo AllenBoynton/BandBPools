@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		01306B21340E48F2BE657BCF /* Pods_BandBPoolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB754C51779C757A2D254E7 /* Pods_BandBPoolsTests.framework */; };
+		0F05FD47214B302100F2D0CA /* UITextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F05FD46214B302100F2D0CA /* UITextFieldPadding.swift */; };
+		0F05FD49214B34AB00F2D0CA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F05FD48214B34AB00F2D0CA /* UIView.swift */; };
+		0F05FD4B214B355E00F2D0CA /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F05FD4A214B355E00F2D0CA /* RGB.swift */; };
 		0F0B307D210C16B100F59639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B307C210C16B100F59639 /* AppDelegate.swift */; };
 		0F0B307F210C16B100F59639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B307E210C16B100F59639 /* ViewController.swift */; };
 		0F0B3082210C16B100F59639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0B3080210C16B100F59639 /* Main.storyboard */; };
@@ -16,14 +19,13 @@
 		0F0B3092210C16B200F59639 /* BandBPoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B3091210C16B200F59639 /* BandBPoolsTests.swift */; };
 		0F0B30A2210C2B3600F59639 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B30A1210C2B3600F59639 /* MenuVC.swift */; };
 		0F35F516210E4BA5006C796F /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35F515210E4BA5006C796F /* MessageView.swift */; };
-		0F35F518210E57A9006C796F /* MainMenuCVVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35F517210E57A9006C796F /* MainMenuCVVC.swift */; };
+		0F35F518210E57A9006C796F /* MainMenuCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35F517210E57A9006C796F /* MainMenuCVC.swift */; };
 		0F4503C5210C2D5500BF296F /* DesignableTextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503BF210C2D5500BF296F /* DesignableTextViews.swift */; };
 		0F4503C6210C2D5500BF296F /* DesignableLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C0210C2D5500BF296F /* DesignableLabels.swift */; };
 		0F4503C7210C2D5500BF296F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C1210C2D5500BF296F /* MaterialView.swift */; };
 		0F4503C8210C2D5500BF296F /* DesignableButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C2210C2D5500BF296F /* DesignableButtons.swift */; };
 		0F4503C9210C2D5500BF296F /* DesignableImageViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C3210C2D5500BF296F /* DesignableImageViews.swift */; };
 		0F4503CA210C2D5500BF296F /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C4210C2D5500BF296F /* DropShadow.swift */; };
-		0F4503CD210D324900BF296F /* BorderedTextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503CC210D324900BF296F /* BorderedTextViews.swift */; };
 		0F4503CF210D446600BF296F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F4503CE210D446600BF296F /* GoogleService-Info.plist */; };
 		0FB39387210D928C00A912DB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FB39386210D928C00A912DB /* Default-568h@2x.png */; };
 		ED587F2F554A8B92947E2883 /* Pods_BandBPools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6110D7CCA4D4AE2DEEBA32 /* Pods_BandBPools.framework */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F05FD46214B302100F2D0CA /* UITextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
+		0F05FD48214B34AB00F2D0CA /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		0F05FD4A214B355E00F2D0CA /* RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGB.swift; sourceTree = "<group>"; };
 		0F0B3079210C16B100F59639 /* BandBPools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BandBPools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0B307C210C16B100F59639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F0B307E210C16B100F59639 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,14 +57,13 @@
 		0F0B3093210C16B200F59639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F0B30A1210C2B3600F59639 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		0F35F515210E4BA5006C796F /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-		0F35F517210E57A9006C796F /* MainMenuCVVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCVVC.swift; sourceTree = "<group>"; };
+		0F35F517210E57A9006C796F /* MainMenuCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCVC.swift; sourceTree = "<group>"; };
 		0F4503BF210C2D5500BF296F /* DesignableTextViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextViews.swift; sourceTree = "<group>"; };
 		0F4503C0210C2D5500BF296F /* DesignableLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabels.swift; sourceTree = "<group>"; };
 		0F4503C1210C2D5500BF296F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		0F4503C2210C2D5500BF296F /* DesignableButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButtons.swift; sourceTree = "<group>"; };
 		0F4503C3210C2D5500BF296F /* DesignableImageViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageViews.swift; sourceTree = "<group>"; };
 		0F4503C4210C2D5500BF296F /* DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
-		0F4503CC210D324900BF296F /* BorderedTextViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedTextViews.swift; sourceTree = "<group>"; };
 		0F4503CE210D446600BF296F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FB39386210D928C00A912DB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		22B32BB9345BE65D29C9611E /* Pods-BandBPoolsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BandBPoolsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BandBPoolsTests/Pods-BandBPoolsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,7 +151,7 @@
 			children = (
 				0F0B307E210C16B100F59639 /* ViewController.swift */,
 				0F0B30A1210C2B3600F59639 /* MenuVC.swift */,
-				0F35F517210E57A9006C796F /* MainMenuCVVC.swift */,
+				0F35F517210E57A9006C796F /* MainMenuCVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -173,6 +177,9 @@
 				0F4503C4210C2D5500BF296F /* DropShadow.swift */,
 				0F4503C1210C2D5500BF296F /* MaterialView.swift */,
 				0F35F515210E4BA5006C796F /* MessageView.swift */,
+				0F05FD4A214B355E00F2D0CA /* RGB.swift */,
+				0F05FD46214B302100F2D0CA /* UITextFieldPadding.swift */,
+				0F05FD48214B34AB00F2D0CA /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,7 +197,6 @@
 		0F4503CB210C2D5F00BF296F /* Designables */ = {
 			isa = PBXGroup;
 			children = (
-				0F4503CC210D324900BF296F /* BorderedTextViews.swift */,
 				0F4503C2210C2D5500BF296F /* DesignableButtons.swift */,
 				0F4503C3210C2D5500BF296F /* DesignableImageViews.swift */,
 				0F4503C0210C2D5500BF296F /* DesignableLabels.swift */,
@@ -288,7 +294,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0F0B3074210C16B100F59639 /* Build configuration list for PBXProject "BandBPools" */;
+			buildConfigurationList = 0F0B3074210C16B100F59639 /* Build configuration list for PBXProject "B & B Pools" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -399,16 +405,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F05FD49214B34AB00F2D0CA /* UIView.swift in Sources */,
 				0F0B307F210C16B100F59639 /* ViewController.swift in Sources */,
 				0F4503C6210C2D5500BF296F /* DesignableLabels.swift in Sources */,
 				0F4503C5210C2D5500BF296F /* DesignableTextViews.swift in Sources */,
 				0F4503C7210C2D5500BF296F /* MaterialView.swift in Sources */,
-				0F4503CD210D324900BF296F /* BorderedTextViews.swift in Sources */,
 				0F4503CA210C2D5500BF296F /* DropShadow.swift in Sources */,
 				0F35F516210E4BA5006C796F /* MessageView.swift in Sources */,
 				0F4503C9210C2D5500BF296F /* DesignableImageViews.swift in Sources */,
 				0F0B307D210C16B100F59639 /* AppDelegate.swift in Sources */,
-				0F35F518210E57A9006C796F /* MainMenuCVVC.swift in Sources */,
+				0F35F518210E57A9006C796F /* MainMenuCVC.swift in Sources */,
+				0F05FD47214B302100F2D0CA /* UITextFieldPadding.swift in Sources */,
+				0F05FD4B214B355E00F2D0CA /* RGB.swift in Sources */,
 				0F4503C8210C2D5500BF296F /* DesignableButtons.swift in Sources */,
 				0F0B30A2210C2B3600F59639 /* MenuVC.swift in Sources */,
 			);
@@ -651,7 +659,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0F0B3074210C16B100F59639 /* Build configuration list for PBXProject "BandBPools" */ = {
+		0F0B3074210C16B100F59639 /* Build configuration list for PBXProject "B & B Pools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F0B3094210C16B200F59639 /* Debug */,
