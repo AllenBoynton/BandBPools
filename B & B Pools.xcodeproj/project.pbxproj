@@ -17,6 +17,8 @@
 		0F0B3087210C16B200F59639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0B3085210C16B200F59639 /* LaunchScreen.storyboard */; };
 		0F0B3092210C16B200F59639 /* BandBPoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B3091210C16B200F59639 /* BandBPoolsTests.swift */; };
 		0F0B30A2210C2B3600F59639 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B30A1210C2B3600F59639 /* MenuVC.swift */; };
+		0F0DCCC221699E7B005377D7 /* Pods_B___B_Pools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0DCCC121699E7B005377D7 /* Pods_B___B_Pools.framework */; };
+		0F0DCCC421699E7B005377D7 /* Pods_B___B_PoolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0DCCC321699E7B005377D7 /* Pods_B___B_PoolsTests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0F35F518210E57A9006C796F /* MainMenuCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35F517210E57A9006C796F /* MainMenuCVC.swift */; };
 		0F4503C5210C2D5500BF296F /* DesignableTextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503BF210C2D5500BF296F /* DesignableTextViews.swift */; };
 		0F4503C6210C2D5500BF296F /* DesignableLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C0210C2D5500BF296F /* DesignableLabels.swift */; };
@@ -26,8 +28,7 @@
 		0F4503CA210C2D5500BF296F /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C4210C2D5500BF296F /* DropShadow.swift */; };
 		0F4503CF210D446600BF296F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F4503CE210D446600BF296F /* GoogleService-Info.plist */; };
 		0FB39387210D928C00A912DB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FB39386210D928C00A912DB /* Default-568h@2x.png */; };
-		B6A4074EB7878100EE034F1B /* Pods_B___B_PoolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5B1E4A9A1BFE9A5C67D8C /* Pods_B___B_PoolsTests.framework */; };
-		E78DDBBE7CA69B68B496B46C /* Pods_B___B_Pools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E6225AF086A8BB2934E3D2 /* Pods_B___B_Pools.framework */; };
+		31BB060A646A87F14687E86B /* Pods_B___B_PoolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0DCCC321699E7B005377D7 /* Pods_B___B_PoolsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		0F0B3091210C16B200F59639 /* BandBPoolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandBPoolsTests.swift; sourceTree = "<group>"; };
 		0F0B3093210C16B200F59639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F0B30A1210C2B3600F59639 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		0F0DCCC121699E7B005377D7 /* Pods_B___B_Pools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_B___B_Pools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F0DCCC321699E7B005377D7 /* Pods_B___B_PoolsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_B___B_PoolsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F35F517210E57A9006C796F /* MainMenuCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCVC.swift; sourceTree = "<group>"; };
 		0F4503BF210C2D5500BF296F /* DesignableTextViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextViews.swift; sourceTree = "<group>"; };
 		0F4503C0210C2D5500BF296F /* DesignableLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabels.swift; sourceTree = "<group>"; };
@@ -67,8 +70,6 @@
 		4B641647D577623F83AEB5D5 /* Pods-B & B PoolsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B & B PoolsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-B & B PoolsTests/Pods-B & B PoolsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		87678B0778B55ECE27E9D88C /* Pods-B & B Pools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B & B Pools.release.xcconfig"; path = "Pods/Target Support Files/Pods-B & B Pools/Pods-B & B Pools.release.xcconfig"; sourceTree = "<group>"; };
 		B3D426C6D6BABAE0F55C05FC /* Pods-B & B Pools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B & B Pools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-B & B Pools/Pods-B & B Pools.debug.xcconfig"; sourceTree = "<group>"; };
-		BFE5B1E4A9A1BFE9A5C67D8C /* Pods_B___B_PoolsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_B___B_PoolsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2E6225AF086A8BB2934E3D2 /* Pods_B___B_Pools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_B___B_Pools.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD9E03330B73A92DA2BE68B /* Pods-B & B PoolsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B & B PoolsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-B & B PoolsTests/Pods-B & B PoolsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E78DDBBE7CA69B68B496B46C /* Pods_B___B_Pools.framework in Frameworks */,
+				0F0DCCC221699E7B005377D7 /* Pods_B___B_Pools.framework in Frameworks */,
+				0F0DCCC421699E7B005377D7 /* Pods_B___B_PoolsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6A4074EB7878100EE034F1B /* Pods_B___B_PoolsTests.framework in Frameworks */,
+				31BB060A646A87F14687E86B /* Pods_B___B_PoolsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,8 +216,8 @@
 		86AA4F53A25E4011589FD1C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2E6225AF086A8BB2934E3D2 /* Pods_B___B_Pools.framework */,
-				BFE5B1E4A9A1BFE9A5C67D8C /* Pods_B___B_PoolsTests.framework */,
+				0F0DCCC121699E7B005377D7 /* Pods_B___B_Pools.framework */,
+				0F0DCCC321699E7B005377D7 /* Pods_B___B_PoolsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -381,6 +383,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-B & B Pools/Pods-B & B Pools-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Braintree/Braintree.framework",
+				"${BUILT_PRODUCTS_DIR}/BraintreeDropIn/BraintreeDropIn.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -388,6 +392,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Braintree.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BraintreeDropIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
