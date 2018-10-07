@@ -11,9 +11,6 @@ target 'B & B Pools' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
 
-  # Swift 3.0 - Xcode 8
-    pod 'SwiftMessages'
-
   target 'B & B PoolsTests' do
     inherit! :search_paths
     # Pods for testing

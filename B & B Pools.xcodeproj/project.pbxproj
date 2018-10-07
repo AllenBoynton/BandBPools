@@ -17,7 +17,6 @@
 		0F0B3087210C16B200F59639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0B3085210C16B200F59639 /* LaunchScreen.storyboard */; };
 		0F0B3092210C16B200F59639 /* BandBPoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B3091210C16B200F59639 /* BandBPoolsTests.swift */; };
 		0F0B30A2210C2B3600F59639 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B30A1210C2B3600F59639 /* MenuVC.swift */; };
-		0F35F516210E4BA5006C796F /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35F515210E4BA5006C796F /* MessageView.swift */; };
 		0F35F518210E57A9006C796F /* MainMenuCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35F517210E57A9006C796F /* MainMenuCVC.swift */; };
 		0F4503C5210C2D5500BF296F /* DesignableTextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503BF210C2D5500BF296F /* DesignableTextViews.swift */; };
 		0F4503C6210C2D5500BF296F /* DesignableLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4503C0210C2D5500BF296F /* DesignableLabels.swift */; };
@@ -56,7 +55,6 @@
 		0F0B3091210C16B200F59639 /* BandBPoolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandBPoolsTests.swift; sourceTree = "<group>"; };
 		0F0B3093210C16B200F59639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F0B30A1210C2B3600F59639 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
-		0F35F515210E4BA5006C796F /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		0F35F517210E57A9006C796F /* MainMenuCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCVC.swift; sourceTree = "<group>"; };
 		0F4503BF210C2D5500BF296F /* DesignableTextViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextViews.swift; sourceTree = "<group>"; };
 		0F4503C0210C2D5500BF296F /* DesignableLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabels.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 			children = (
 				0F4503C4210C2D5500BF296F /* DropShadow.swift */,
 				0F4503C1210C2D5500BF296F /* MaterialView.swift */,
-				0F35F515210E4BA5006C796F /* MessageView.swift */,
 				0F05FD4A214B355E00F2D0CA /* RGB.swift */,
 				0F05FD46214B302100F2D0CA /* UITextFieldPadding.swift */,
 				0F05FD48214B34AB00F2D0CA /* UIView.swift */,
@@ -287,6 +284,11 @@
 				TargetAttributes = {
 					0F0B3078210C16B100F59639 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					0F0B308C210C16B200F59639 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -381,7 +383,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-B & B Pools/Pods-B & B Pools-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -389,7 +390,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -411,7 +411,6 @@
 				0F4503C5210C2D5500BF296F /* DesignableTextViews.swift in Sources */,
 				0F4503C7210C2D5500BF296F /* MaterialView.swift in Sources */,
 				0F4503CA210C2D5500BF296F /* DropShadow.swift in Sources */,
-				0F35F516210E4BA5006C796F /* MessageView.swift in Sources */,
 				0F4503C9210C2D5500BF296F /* DesignableImageViews.swift in Sources */,
 				0F0B307D210C16B100F59639 /* AppDelegate.swift in Sources */,
 				0F35F518210E57A9006C796F /* MainMenuCVC.swift in Sources */,
@@ -511,7 +510,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -565,7 +564,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -580,13 +579,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 979TTQWNS8;
+				DEVELOPMENT_TEAM = 6GTM24L94G;
 				INFOPLIST_FILE = "$(SRCROOT)/B & B Pools/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alsmobileapps.BandBPools;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alsmobileapps.BBPools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -599,13 +599,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 979TTQWNS8;
+				DEVELOPMENT_TEAM = 6GTM24L94G;
 				INFOPLIST_FILE = "$(SRCROOT)/B & B Pools/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alsmobileapps.BandBPools;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alsmobileapps.BBPools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

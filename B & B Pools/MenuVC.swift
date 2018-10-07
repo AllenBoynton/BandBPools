@@ -8,7 +8,6 @@
 
 import UIKit
 import FirebaseAuth
-import SwiftMessages
 import WebKit
 
 class MenuVC: UIViewController {
@@ -22,7 +21,6 @@ class MenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createMessage()
         urlTextField.delegate = self
         webView.navigationDelegate = self
     }
@@ -74,23 +72,6 @@ class MenuVC: UIViewController {
             }
 //            self.dismiss(animated: true, completion: nil)
         }
-    }
-    
-    func createMessage() {
-        let view = MessageView.viewFromNib(layout: .cardView)
-        
-        view.configureTheme(.success)
-        
-        // Add a drop shadow.
-        view.configureDropShadow()
-        
-        // Set message title, body, and icon. Here, we're overriding the default warning
-        // image with an emoji character.
-        let iconText = ["🤔", "😳", "🙄", "😶", "😎", "🤪", "🙂", "🤗", "🤩", "🤨", "😐", "😑", "😏", "🤐", "😯", "😌", "😛", "😜", "🤑", "😲", "😇", "🤠", "🤡", "🤫",  "🧐", "🤓", "🤖", "🤲", "👐", "🙌", "👏", "🤝", "👍", "👊", "✊", "🤛", "🤜",  "✌️", "🤟", "🤘", "👌", "🖐", "🖖", "👋", "🤙", "💪", "💃🏻", "🕺🏻", "🚜", "⛱", "🏖", "🏝", "🏊‍♂️ ", "🏄🏿‍♂️"].sm_random()!
-        view.configureContent(title: "Success", body: "You are logged in!", iconText: iconText)
-        view.button?.isHidden = true
-        
-        SwiftMessages.show(view: view) // config: config,
     }
 }
 
