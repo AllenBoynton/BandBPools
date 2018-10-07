@@ -10,7 +10,7 @@ import UIKit
 
 class UITextFieldPadding : UITextField {
     
-    let padding = UIEdgeInsetsMake(0, 10, 0, 10)
+    let padding = UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -18,16 +18,13 @@ class UITextFieldPadding : UITextField {
     
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds,
-                                     padding)
+        return bounds.inset(by: padding)
     }
     override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds,
-                                     padding)
+        return bounds.inset(by: padding)
     }
     
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds,
-                                     padding)
+        return bounds.inset(by: padding)
     }
 }

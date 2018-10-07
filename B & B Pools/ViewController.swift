@@ -59,13 +59,13 @@ class ViewController: UIViewController {
     }
     
     func moveKeyboard() {
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil);
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil);
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue.height
+        let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue.height
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
             self.view.window?.frame.origin.y = -0.4 * keyboardHeight
             self.view.layoutIfNeeded()

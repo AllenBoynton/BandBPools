@@ -13,9 +13,9 @@ target 'B & B Pools' do
 
     pod 'BraintreeDropIn'
 
-  target 'B & B PoolsTests' do
-    inherit! :search_paths
+  # target 'B & B PoolsTests' do
+    # inherit! :search_paths
     # Pods for testing
-  end
+  # end
 
 end
