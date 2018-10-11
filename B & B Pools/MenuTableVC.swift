@@ -8,8 +8,6 @@
 
 import UIKit
 
-let myCell = "MyCell"
-
 class MenuTableVC: UITableViewController {
 
     override func viewDidLoad() {
@@ -35,19 +33,18 @@ class MenuTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: myCell, for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = "Hello"
+        cell.textLabel?.text = "B & B POOLS, INC."
 
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
     }
-    */
 
 }
