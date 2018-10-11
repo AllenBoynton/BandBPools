@@ -12,6 +12,8 @@ import BraintreeDropIn
 import Braintree
 
 let toMenuVC = "toMenuVC"
+let myCell = "MyCell"
+let myCollectionCell = "MyCollectionCell"
 
 class ViewController: UIViewController {
 
@@ -91,6 +93,7 @@ class ViewController: UIViewController {
             print(clientToken as Any)
             // As an example, you may wish to present Drop-in at this point.
             // Continue to the next section to learn more...
+            
             }.resume()
     }
     
