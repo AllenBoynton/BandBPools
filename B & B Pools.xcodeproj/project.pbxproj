@@ -25,6 +25,8 @@
 		0F4543CB216A7C6600BF3351 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4543CA216A7C6600BF3351 /* MenuTableViewCell.swift */; };
 		0F4543CD216A7CA500BF3351 /* MenuTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4543CC216A7CA500BF3351 /* MenuTableVC.swift */; };
 		0FB39387210D928C00A912DB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FB39386210D928C00A912DB /* Default-568h@2x.png */; };
+		0FE54AFD216FD11400BB725A /* MenuCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE54AFC216FD11400BB725A /* MenuCollectionVC.swift */; };
+		0FE54AFF216FD12F00BB725A /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE54AFE216FD12F00BB725A /* MenuCollectionViewCell.swift */; };
 		0FEC34A12169C9C00092D33C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FEC34A02169C9C00092D33C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		0F4543CA216A7C6600BF3351 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		0F4543CC216A7CA500BF3351 /* MenuTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableVC.swift; sourceTree = "<group>"; };
 		0FB39386210D928C00A912DB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0FE54AFC216FD11400BB725A /* MenuCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionVC.swift; sourceTree = "<group>"; };
+		0FE54AFE216FD12F00BB725A /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		0FEC34A02169C9C00092D33C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87678B0778B55ECE27E9D88C /* Pods-B & B Pools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B & B Pools.release.xcconfig"; path = "Pods/Target Support Files/Pods-B & B Pools/Pods-B & B Pools.release.xcconfig"; sourceTree = "<group>"; };
 		B3D426C6D6BABAE0F55C05FC /* Pods-B & B Pools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B & B Pools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-B & B Pools/Pods-B & B Pools.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				0F0B307E210C16B100F59639 /* ViewController.swift */,
 				0F0B30A1210C2B3600F59639 /* WebViewController.swift */,
 				0F4543CC216A7CA500BF3351 /* MenuTableVC.swift */,
+				0FE54AFC216FD11400BB725A /* MenuCollectionVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				0F4543CA216A7C6600BF3351 /* MenuTableViewCell.swift */,
+				0FE54AFE216FD12F00BB725A /* MenuCollectionViewCell.swift */,
 				0F4503CB210C2D5F00BF296F /* Designables */,
 				0F4543CE216A86E200BF3351 /* Storyboards */,
 			);
@@ -331,9 +337,11 @@
 				0F05FD49214B34AB00F2D0CA /* UIView.swift in Sources */,
 				0F0B307F210C16B100F59639 /* ViewController.swift in Sources */,
 				0F4543CB216A7C6600BF3351 /* MenuTableViewCell.swift in Sources */,
+				0FE54AFF216FD12F00BB725A /* MenuCollectionViewCell.swift in Sources */,
 				0F4503C6210C2D5500BF296F /* DesignableLabels.swift in Sources */,
 				0F4503C5210C2D5500BF296F /* DesignableTextViews.swift in Sources */,
 				0F4503C7210C2D5500BF296F /* MaterialView.swift in Sources */,
+				0FE54AFD216FD11400BB725A /* MenuCollectionVC.swift in Sources */,
 				0F4503CA210C2D5500BF296F /* DropShadow.swift in Sources */,
 				0F4503C9210C2D5500BF296F /* DesignableImageViews.swift in Sources */,
 				0F4543CD216A7CA500BF3351 /* MenuTableVC.swift in Sources */,
