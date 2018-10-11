@@ -8,6 +8,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Menu CollectionVC-->
+        <scene sceneID="QCz-aC-Ju5">
+            <objects>
+                <collectionViewController id="7JX-4D-KJX" customClass="MenuCollectionVC" customModule="B___B_Pools" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="zrw-R1-gnK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gds-QV-2He">
+                            <size key="itemSize" width="60" height="60"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCollectionCell" id="n4T-yc-1nj" customClass="MenuCollectionViewCell" customModule="B___B_Pools" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="7JX-4D-KJX" id="sIg-mU-fYI"/>
+                            <outlet property="delegate" destination="7JX-4D-KJX" id="OBc-Kv-7mU"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DL6-uz-djC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625" y="-550"/>
+        </scene>
         <!--B & B Pools, Inc.-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -108,7 +143,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0CI-JF-Gxt"/>
-                                            <segue destination="dTR-tz-PPo" kind="presentation" identifier="toMenuVC" id="0eY-zt-sVS"/>
+                                            <segue destination="dTR-tz-PPo" kind="show" identifier="toMenuVC" id="0eY-zt-sVS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -157,11 +192,40 @@
                                     <action selector="payWithBraintree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UbO-ww-cx5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnK-sw-fhT" customClass="DesignableButtons" customModule="B___B_Pools" customModuleProvider="target">
+                                <rect key="frame" x="79" y="133" width="256" height="40"/>
+                                <color key="backgroundColor" red="0.5450980392" green="0.7843137255" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="std-fG-9fE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <state key="normal" title="CollectionView">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="7JX-4D-KJX" kind="show" identifier="toCollectionVC" id="MMg-Ng-qr7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="BnK-sw-fhT" firstAttribute="width" secondItem="vZJ-Ea-L1F" secondAttribute="width" id="1Ba-XH-DMR"/>
                             <constraint firstItem="DOY-lu-4Kp" firstAttribute="top" secondItem="vZJ-Ea-L1F" secondAttribute="bottom" constant="10" id="6EQ-gH-CQu"/>
                             <constraint firstItem="MAC-SV-5Sh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="9N3-6a-uqY"/>
+                            <constraint firstItem="BnK-sw-fhT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9cE-pi-BRx"/>
                             <constraint firstAttribute="trailing" secondItem="MAC-SV-5Sh" secondAttribute="trailing" id="BLR-2o-k02"/>
                             <constraint firstItem="5mc-hp-OBt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="NbB-bn-glx"/>
                             <constraint firstItem="mJ4-Gb-xpt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RMZ-90-zqd"/>
@@ -177,12 +241,13 @@
                             <constraint firstItem="MAC-SV-5Sh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pCC-kz-ZQy"/>
                             <constraint firstItem="vZJ-Ea-L1F" firstAttribute="top" secondItem="Xv8-Tv-XUs" secondAttribute="bottom" constant="30" id="pkN-Ry-93B"/>
                             <constraint firstItem="W9O-Xt-t7W" firstAttribute="height" secondItem="5mc-hp-OBt" secondAttribute="height" multiplier="1.4" id="qkv-Ou-lTx"/>
+                            <constraint firstItem="BnK-sw-fhT" firstAttribute="top" secondItem="FB8-as-6Sq" secondAttribute="bottom" constant="45" id="t74-oW-Cyo"/>
                             <constraint firstItem="mJ4-Gb-xpt" firstAttribute="width" secondItem="vZJ-Ea-L1F" secondAttribute="width" id="wBY-KW-K8c"/>
                             <constraint firstItem="nRn-E4-DMX" firstAttribute="top" secondItem="MAC-SV-5Sh" secondAttribute="bottom" id="yda-at-aFe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="B &amp; B Pools, Inc." id="PGC-xz-mbu">
-                        <barButtonItem key="backBarButtonItem" id="GX6-K4-Pl5">
+                        <barButtonItem key="backBarButtonItem" title="Logout" springLoaded="YES" id="GX6-K4-Pl5">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
@@ -196,14 +261,14 @@
             </objects>
             <point key="canvasLocation" x="844" y="132.26600985221674"/>
         </scene>
-        <!--Menu TableVC-->
+        <!--Main Menu-->
         <scene sceneID="CKR-xf-5J4">
             <objects>
-                <tableViewController storyboardIdentifier="MenuVC" id="dTR-tz-PPo" customClass="MenuTableVC" customModule="B___B_Pools" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MenuVC" title="Main Menu" id="dTR-tz-PPo" customClass="MenuTableVC" customModule="B___B_Pools" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="alw-h5-ix5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" rowHeight="80" id="tgN-j1-E05" customClass="MenuTableViewCell" customModule="B___B_Pools" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
@@ -223,7 +288,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3T-iV-Mfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660.8695652173915" y="132.58928571428572"/>
+            <point key="canvasLocation" x="1625" y="132"/>
         </scene>
         <!--WebView-->
         <scene sceneID="re5-M8-g6m">
@@ -346,6 +411,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="B&amp;BLogo" width="256" height="149"/>
+        <image name="B&amp;BLogo" width="384.75" height="224.25"/>
     </resources>
 </document>
