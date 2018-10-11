@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hln-X2-v9n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hln-X2-v9n">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--B & B Pools, Inc.-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BandBPools" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="B___B_Pools" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FB8-as-6Sq"/>
                         <viewControllerLayoutGuide type="bottom" id="nRn-E4-DMX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mc-hp-OBt" userLabel="LogoContainer">
-                                <rect key="frame" x="243" y="167" width="113" height="66"/>
+                                <rect key="frame" x="79" y="273.5" width="256" height="149"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B&amp;BLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5SX-lb-bls">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="66"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B&amp;BLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5SX-lb-bls">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="149"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5SX-lb-bls" secondAttribute="height" multiplier="256:149" id="gdA-8o-lkK"/>
                                         </constraints>
@@ -38,30 +39,30 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Allen Boynton 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAC-SV-5Sh">
-                                <rect key="frame" x="0.0" y="570" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="817" width="414" height="45"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9O-Xt-t7W" userLabel="fieldContainer">
-                                <rect key="frame" x="243" y="283" width="113" height="92"/>
+                                <rect key="frame" x="79" y="472.5" width="256" height="208.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zhX-QK-0WI" userLabel="emailTextField" customClass="UITextFieldPadding" customModule="BandBPools" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="8" width="113" height="27"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zhX-QK-0WI" userLabel="emailTextField" customClass="UITextFieldPadding" customModule="B___B_Pools" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="8" width="256" height="40.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-Tv-XUs" userLabel="passwordTextField" customClass="UITextFieldPadding" customModule="BandBPools" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="45" width="113" height="26.5"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-Tv-XUs" userLabel="passwordTextField" customClass="UITextFieldPadding" customModule="B___B_Pools" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="58.5" width="256" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOY-lu-4Kp" customClass="DesignableButtons" customModule="BandBPools" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="139" width="113" height="25"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOY-lu-4Kp" customClass="DesignableButtons" customModule="B___B_Pools" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="179" width="256" height="25"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Fyb-XB-ZI5"/>
@@ -85,8 +86,8 @@
                                             <action selector="forgotTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JNa-7W-rb9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZJ-Ea-L1F" customClass="DesignableButtons" customModule="BandBPools" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="102" width="113" height="27"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZJ-Ea-L1F" customClass="DesignableButtons" customModule="B___B_Pools" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128.5" width="256" height="40.5"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                         <state key="normal" title="Login">
@@ -103,9 +104,11 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0CI-JF-Gxt"/>
+                                            <segue destination="dTR-tz-PPo" kind="presentation" identifier="toMenuVC" id="0eY-zt-sVS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -127,19 +130,54 @@
                                     <constraint firstItem="zhX-QK-0WI" firstAttribute="centerX" secondItem="W9O-Xt-t7W" secondAttribute="centerX" id="zKe-GL-b2Y"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJ4-Gb-xpt" customClass="DesignableButtons" customModule="B___B_Pools" customModuleProvider="target">
+                                <rect key="frame" x="79" y="742" width="256" height="40"/>
+                                <color key="backgroundColor" red="0.5450980392" green="0.7843137255" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2gX-bG-qsY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <state key="normal" title="Pay">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="payWithBraintree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UbO-ww-cx5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="DOY-lu-4Kp" firstAttribute="top" secondItem="vZJ-Ea-L1F" secondAttribute="bottom" constant="10" id="6EQ-gH-CQu"/>
                             <constraint firstItem="MAC-SV-5Sh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="9N3-6a-uqY"/>
                             <constraint firstAttribute="trailing" secondItem="MAC-SV-5Sh" secondAttribute="trailing" id="BLR-2o-k02"/>
                             <constraint firstItem="5mc-hp-OBt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="NbB-bn-glx"/>
+                            <constraint firstItem="mJ4-Gb-xpt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RMZ-90-zqd"/>
                             <constraint firstItem="W9O-Xt-t7W" firstAttribute="top" secondItem="5mc-hp-OBt" secondAttribute="bottom" constant="50" id="Sxz-tP-CHc"/>
                             <constraint firstItem="W9O-Xt-t7W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZaJ-6F-1v2"/>
+                            <constraint firstItem="vZJ-Ea-L1F" firstAttribute="height" secondItem="Xv8-Tv-XUs" secondAttribute="height" id="Zvm-aq-19l"/>
+                            <constraint firstItem="vZJ-Ea-L1F" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-158" id="aJ4-Ms-d1S"/>
                             <constraint firstItem="W9O-Xt-t7W" firstAttribute="width" secondItem="5mc-hp-OBt" secondAttribute="width" id="cBu-at-uk1"/>
                             <constraint firstItem="5mc-hp-OBt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cxT-r4-vBF"/>
                             <constraint firstItem="zhX-QK-0WI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.045" id="dPa-Io-7Eh"/>
+                            <constraint firstItem="vZJ-Ea-L1F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iqe-cI-WeM"/>
+                            <constraint firstItem="MAC-SV-5Sh" firstAttribute="top" secondItem="mJ4-Gb-xpt" secondAttribute="bottom" constant="35" id="kXH-Y6-QM7"/>
                             <constraint firstItem="MAC-SV-5Sh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pCC-kz-ZQy"/>
+                            <constraint firstItem="vZJ-Ea-L1F" firstAttribute="top" secondItem="Xv8-Tv-XUs" secondAttribute="bottom" constant="30" id="pkN-Ry-93B"/>
                             <constraint firstItem="W9O-Xt-t7W" firstAttribute="height" secondItem="5mc-hp-OBt" secondAttribute="height" multiplier="1.4" id="qkv-Ou-lTx"/>
+                            <constraint firstItem="mJ4-Gb-xpt" firstAttribute="width" secondItem="vZJ-Ea-L1F" secondAttribute="width" id="wBY-KW-K8c"/>
                             <constraint firstItem="nRn-E4-DMX" firstAttribute="top" secondItem="MAC-SV-5Sh" secondAttribute="bottom" id="yda-at-aFe"/>
                         </constraints>
                     </view>
@@ -158,63 +196,57 @@
             </objects>
             <point key="canvasLocation" x="844" y="132.26600985221674"/>
         </scene>
-        <!--Main MenuCVC-->
-        <scene sceneID="c38-1m-hq5">
+        <!--Menu TableVC-->
+        <scene sceneID="CKR-xf-5J4">
             <objects>
-                <collectionViewController storyboardIdentifier="MainMenuCVVC" id="Pcy-fR-29K" customClass="MainMenuCVC" customModule="BandBPools" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Mw1-bn-giP" customClass="Main">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController storyboardIdentifier="MenuVC" id="dTR-tz-PPo" customClass="MenuTableVC" customModule="B___B_Pools" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="alw-h5-ix5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ud8-zl-qXR">
-                            <size key="itemSize" width="163" height="189"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Xnw-AP-ZgU">
-                                <rect key="frame" x="0.0" y="0.0" width="163" height="189"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="163" height="189"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" rowHeight="80" id="tgN-j1-E05" customClass="MenuTableViewCell" customModule="B___B_Pools" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tgN-j1-E05" id="6OA-ez-EUT">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.5450980392" green="0.7843137255" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Pcy-fR-29K" id="4F1-Dr-Tix"/>
-                            <outlet property="delegate" destination="Pcy-fR-29K" id="r72-Bo-oHJ"/>
+                            <outlet property="dataSource" destination="dTR-tz-PPo" id="1EI-lD-gPC"/>
+                            <outlet property="delegate" destination="dTR-tz-PPo" id="IeQ-uw-bax"/>
                         </connections>
-                    </collectionView>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9f-fV-z1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c3T-iV-Mfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662" y="133"/>
+            <point key="canvasLocation" x="1660.8695652173915" y="132.58928571428572"/>
         </scene>
-        <!--MenuVC-->
+        <!--WebView-->
         <scene sceneID="re5-M8-g6m">
             <objects>
-                <viewController storyboardIdentifier="MenuVC" id="Jxp-BU-5bo" customClass="MenuVC" customModule="BandBPools" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebVC" id="Jxp-BU-5bo" customClass="WebViewController" customModule="B___B_Pools" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mq4-Mt-CPS"/>
                         <viewControllerLayoutGuide type="bottom" id="vQG-UA-2cp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="E7d-Uh-jsT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VC9-dW-FbX">
-                                <rect key="frame" x="0.0" y="46" width="600" height="554"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="762"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oo0-04-jYf">
-                                <rect key="frame" x="8" y="8" width="34" height="30"/>
+                                <rect key="frame" x="8" y="96" width="34" height="30"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -222,7 +254,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVO-eW-9Ch">
-                                <rect key="frame" x="50" y="8" width="444" height="30"/>
+                                <rect key="frame" x="50" y="96" width="258" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -231,7 +263,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eue-uT-wkF">
-                                <rect key="frame" x="562" y="8" width="30" height="30"/>
+                                <rect key="frame" x="376" y="96" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="O6E-3A-SAv"/>
                                 </constraints>
@@ -244,7 +276,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTZ-Lc-PQ6">
-                                <rect key="frame" x="502" y="8" width="56" height="30"/>
+                                <rect key="frame" x="316" y="96" width="56" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="wxu-cK-1cW"/>
                                 </constraints>
@@ -272,7 +304,9 @@
                             <constraint firstItem="LTZ-Lc-PQ6" firstAttribute="leading" secondItem="cVO-eW-9Ch" secondAttribute="trailing" constant="8" id="t18-T1-8kW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="agq-z8-uJf"/>
+                    <navigationItem key="navigationItem" title="WebView" id="agq-z8-uJf">
+                        <barButtonItem key="backBarButtonItem" title="&lt; Back" id="Cmh-JZ-xya"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black"/>
                     <connections>
                         <outlet property="backButton" destination="oo0-04-jYf" id="RYz-iP-Bq3"/>
@@ -291,7 +325,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hln-X2-v9n" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="EYc-ym-TZb">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">

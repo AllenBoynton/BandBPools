@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import WebKit
 
-class MenuVC: UIViewController {
+class WebViewController: UIViewController {
     
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -75,7 +75,7 @@ class MenuVC: UIViewController {
     }
 }
 
-extension MenuVC: UITextFieldDelegate {
+extension WebViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let urlString = urlTextField.text!
         let url = URL(string: urlString)!
@@ -88,7 +88,7 @@ extension MenuVC: UITextFieldDelegate {
     }
 }
 
-extension MenuVC: WKNavigationDelegate {
+extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         backButton.isEnabled = webView.canGoBack
         forwardButton.isEnabled = webView.canGoForward

@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>764580497765-h7p3scb0i7ujbokea6m96dsl0aaeffu1.apps.googleusercontent.com</string>
+	<string>764580497765-nshtllh9i6biguv2dh955a3btrdnpe9a.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.764580497765-h7p3scb0i7ujbokea6m96dsl0aaeffu1</string>
+	<string>com.googleusercontent.apps.764580497765-nshtllh9i6biguv2dh955a3btrdnpe9a</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCnv-k65P0wk_7ISRVZL4Jg7RcrcpfuDCI</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,23 +17,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.alsmobileapps.BandBPools</string>
+	<string>com.alsmobileapps.BBPools</string>
 	<key>PROJECT_ID</key>
 	<string>b-and-b-pools</string>
 	<key>STORAGE_BUCKET</key>
 	<string>b-and-b-pools.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<true/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:764580497765:ios:11412ee769119c39</string>
+	<string>1:764580497765:ios:ae28e6ad1ce13982</string>
 	<key>DATABASE_URL</key>
 	<string>https://b-and-b-pools.firebaseio.com</string>
 </dict>
