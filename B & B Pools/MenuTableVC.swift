@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let tableCell = "TableCell"
+
 class MenuTableVC: UITableViewController {
 
     override func viewDidLoad() {
@@ -30,7 +32,7 @@ class MenuTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: myCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: tableCell, for: indexPath)
 
         // Configure the cell...
         cell.textLabel?.text = "B & B POOLS, INC."
