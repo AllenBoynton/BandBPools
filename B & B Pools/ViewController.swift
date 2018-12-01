@@ -11,9 +11,7 @@ import FirebaseAuth
 import BraintreeDropIn
 import Braintree
 
-let toMenuVC = "toMenuVC"
-let myCell = "MyCell"
-let myCollectionCell = "MyCollectionCell"
+private let toMenuVC = "toMenuVC"
 
 class ViewController: UIViewController {
 
@@ -106,7 +104,7 @@ class ViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue.height
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            self.view.window?.frame.origin.y = -0.4 * keyboardHeight
+            self.view.window?.frame.origin.y = -0.4 * keyboardHeight + 25
             self.view.layoutIfNeeded()
         })
     }
