@@ -8,18 +8,18 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let collectCell = "CollectCell"
 
 class MenuCollectionVC: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        navigationItem.title = "Main Menu"
+        self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: collectCell)
 
         // Do any additional setup after loading the view.
     }
@@ -38,17 +38,19 @@ class MenuCollectionVC: UICollectionViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 6
+        return 8
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectCell, for: indexPath)
     
         // Configure the cell
+        cell.backgroundColor = UIColor.rgb(red: 160, green: 160, blue: 160)
+        cell.layer.cornerRadius = 5
+        cell.layer.borderWidth = 1
+        cell.clipsToBounds = true
     
         return cell
     }
@@ -84,4 +86,30 @@ class MenuCollectionVC: UICollectionViewController {
     }
     */
 
+}
+
+extension MenuCollectionVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: 150)
+    }
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 35
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.init(top: 40, left: 40, bottom: 40, right: 40)
+    }
 }
