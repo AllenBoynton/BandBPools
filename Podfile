@@ -10,8 +10,10 @@ target 'B & B Pools' do
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
-
-    pod 'BraintreeDropIn'
+    pod 'Firebase/AdMob'
+    pod 'Fabric', '~> 1.9.0'
+    pod 'Crashlytics', '~> 3.12.0'
+    pod 'LBTAComponents', '~> 1.0'
 
   # target 'B & B PoolsTests' do
     # inherit! :search_paths

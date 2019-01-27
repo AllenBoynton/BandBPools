@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hln-X2-v9n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hln-X2-v9n">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,7 +51,7 @@
         <!--B & B Pools, Inc.-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="B___B_Pools" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeController" customModule="B___B_Pools" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FB8-as-6Sq"/>
                         <viewControllerLayoutGuide type="bottom" id="nRn-E4-DMX"/>
@@ -170,33 +170,6 @@
                                     <constraint firstItem="zhX-QK-0WI" firstAttribute="centerX" secondItem="W9O-Xt-t7W" secondAttribute="centerX" id="zKe-GL-b2Y"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJ4-Gb-xpt" customClass="DesignableButtons" customModule="B___B_Pools" customModuleProvider="target">
-                                <rect key="frame" x="79" y="742" width="256" height="40"/>
-                                <color key="backgroundColor" red="0.5450980392" green="0.7843137255" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="2gX-bG-qsY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                                <state key="normal" title="Pay">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="payWithBraintree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UbO-ww-cx5"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnK-sw-fhT" customClass="DesignableButtons" customModule="B___B_Pools" customModuleProvider="target">
                                 <rect key="frame" x="79" y="133" width="256" height="40"/>
                                 <color key="backgroundColor" red="0.5450980392" green="0.7843137255" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -224,46 +197,15 @@
                                     <segue destination="7JX-4D-KJX" kind="show" identifier="toCollectionVC" id="MMg-Ng-qr7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYg-Bn-nDw" customClass="DesignableButtons" customModule="B___B_Pools" customModuleProvider="target">
-                                <rect key="frame" x="79" y="689" width="256" height="40"/>
-                                <color key="backgroundColor" red="0.5450980392" green="0.7843137255" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="1WY-7b-Slu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                                <state key="normal" title="BBP">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="Jxp-BU-5bo" kind="show" id="xmM-HX-dKJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BnK-sw-fhT" firstAttribute="width" secondItem="vZJ-Ea-L1F" secondAttribute="width" id="1Ba-XH-DMR"/>
-                            <constraint firstItem="VYg-Bn-nDw" firstAttribute="top" secondItem="W9O-Xt-t7W" secondAttribute="bottom" constant="8" id="5Ue-ic-DVf"/>
                             <constraint firstItem="DOY-lu-4Kp" firstAttribute="top" secondItem="vZJ-Ea-L1F" secondAttribute="bottom" constant="10" id="6EQ-gH-CQu"/>
                             <constraint firstItem="MAC-SV-5Sh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="9N3-6a-uqY"/>
                             <constraint firstItem="BnK-sw-fhT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9cE-pi-BRx"/>
                             <constraint firstAttribute="trailing" secondItem="MAC-SV-5Sh" secondAttribute="trailing" id="BLR-2o-k02"/>
-                            <constraint firstItem="VYg-Bn-nDw" firstAttribute="width" secondItem="mJ4-Gb-xpt" secondAttribute="width" id="Cga-7S-M28"/>
-                            <constraint firstItem="VYg-Bn-nDw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N1E-lf-DQO"/>
                             <constraint firstItem="5mc-hp-OBt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="NbB-bn-glx"/>
-                            <constraint firstItem="mJ4-Gb-xpt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RMZ-90-zqd"/>
                             <constraint firstItem="W9O-Xt-t7W" firstAttribute="top" secondItem="5mc-hp-OBt" secondAttribute="bottom" constant="50" id="Sxz-tP-CHc"/>
                             <constraint firstItem="W9O-Xt-t7W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZaJ-6F-1v2"/>
                             <constraint firstItem="vZJ-Ea-L1F" firstAttribute="height" secondItem="Xv8-Tv-XUs" secondAttribute="height" id="Zvm-aq-19l"/>
@@ -272,12 +214,10 @@
                             <constraint firstItem="5mc-hp-OBt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cxT-r4-vBF"/>
                             <constraint firstItem="zhX-QK-0WI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.045" id="dPa-Io-7Eh"/>
                             <constraint firstItem="vZJ-Ea-L1F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iqe-cI-WeM"/>
-                            <constraint firstItem="MAC-SV-5Sh" firstAttribute="top" secondItem="mJ4-Gb-xpt" secondAttribute="bottom" constant="35" id="kXH-Y6-QM7"/>
                             <constraint firstItem="MAC-SV-5Sh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pCC-kz-ZQy"/>
                             <constraint firstItem="vZJ-Ea-L1F" firstAttribute="top" secondItem="Xv8-Tv-XUs" secondAttribute="bottom" constant="30" id="pkN-Ry-93B"/>
                             <constraint firstItem="W9O-Xt-t7W" firstAttribute="height" secondItem="5mc-hp-OBt" secondAttribute="height" multiplier="1.4" id="qkv-Ou-lTx"/>
                             <constraint firstItem="BnK-sw-fhT" firstAttribute="top" secondItem="FB8-as-6Sq" secondAttribute="bottom" constant="45" id="t74-oW-Cyo"/>
-                            <constraint firstItem="mJ4-Gb-xpt" firstAttribute="width" secondItem="vZJ-Ea-L1F" secondAttribute="width" id="wBY-KW-K8c"/>
                             <constraint firstItem="nRn-E4-DMX" firstAttribute="top" secondItem="MAC-SV-5Sh" secondAttribute="bottom" id="yda-at-aFe"/>
                         </constraints>
                     </view>

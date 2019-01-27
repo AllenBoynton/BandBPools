@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import Crashlytics
+import Fabric
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+//        let homeController = MenuCollectionVC(collectionViewLayout: UICollectionViewFlowLayout())
+//        window?.rootViewController = UINavigationController(rootViewController: homeController)
+
+        window?.rootViewController = UINavigationController(rootViewController: MenuCollectionVC())
+        
         FirebaseApp.configure()
+        Fabric.sharedSDK().debug = true
         
         let navigationBarAppearance = UINavigationBar.appearance()
         
