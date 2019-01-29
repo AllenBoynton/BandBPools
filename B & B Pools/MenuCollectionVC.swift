@@ -16,14 +16,14 @@ class MenuCollectionVC: DatasourceController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationItem.title = "Main Menu"
         
         let homeDatasource = HomeDatasource()
         self.datasource = homeDatasource
         
         handleAdRequest()
-        collectionView.backgroundColor = .lightGray
+        collectionView.backgroundColor = .white
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
