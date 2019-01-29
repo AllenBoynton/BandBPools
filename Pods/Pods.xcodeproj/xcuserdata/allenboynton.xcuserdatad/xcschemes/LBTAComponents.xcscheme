@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4497707974F27529F28587F8FD7437FA"
+               BlueprintIdentifier = "0D3731E9D57E3EB3E54C28C2E07CF682"
                BlueprintName = "LBTAComponents"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "LBTAComponents.framework">

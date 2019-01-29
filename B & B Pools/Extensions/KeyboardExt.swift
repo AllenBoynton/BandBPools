@@ -22,7 +22,7 @@ extension UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue.height
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            self.view.window?.frame.origin.y = -0.4 * keyboardHeight + 25
+            self.view.window?.frame.origin.y = -0.5 * keyboardHeight + 10
             self.view.layoutIfNeeded()
         })
     }

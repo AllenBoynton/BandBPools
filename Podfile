@@ -11,6 +11,10 @@ target 'B & B Pools' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'Firebase/AdMob'
+    pod 'FirebaseUI/Auth'
+    pod 'FirebaseUI/Google'
+    pod 'FirebaseUI/Facebook', inhibit_warnings: true
+    pod 'FirebaseUI/Phone'
     pod 'Fabric', '~> 1.9.0'
     pod 'Crashlytics', '~> 3.12.0'
     pod 'LBTAComponents', '~> 1.0'

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 private let tableCell = "TableCell"
 
@@ -47,6 +48,15 @@ class MenuTableVC: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
+    }
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
 
 }
