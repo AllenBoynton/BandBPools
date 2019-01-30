@@ -23,10 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FUIAut
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.makeKeyAndVisible()
-//        
-//        window?.rootViewController = UINavigationController(rootViewController: MenuCollectionVC())
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        window?.rootViewController = UINavigationController(rootViewController: MenuCollectionVC())
         
         FirebaseApp.configure()
         Fabric.sharedSDK().debug = true
@@ -34,9 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FUIAut
         // Initialize the Google Mobile Ads SDK.
         GADMobileAds.configure(withApplicationID: "YOUR_ADMOB_APP_ID")
         
+        let navigationController = UINavigationController()
         let navigationBarAppearance = UINavigationBar.appearance()
-        
-        navigationBarAppearance.barTintColor = UIColor.rgb(red: 79, green: 79, blue: 79)
+        navigationBarAppearance.barTintColor = UIColor.rgb(red: 17, green: 43, blue: 95)
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white.cgColor]
+        navigationController.navigationBar.titleTextAttributes = textAttributes
         
         return true
     }
@@ -54,26 +56,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FUIAut
         print("Credential: \(credential)")
     }
     
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-    }
-    
-    private func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
-        
-        return handled || GIDSignIn.sharedInstance().handle(
-            url,
-            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.annotation])
-    }
-    
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url,
-                                                 sourceApplication: sourceApplication,
-                                                 annotation: annotation)
-    }
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+//        // Perform any operations when the user disconnects from app here.
+//        // ...
+//    }
+//
+//    private func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//
+//        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+//
+//        return handled || GIDSignIn.sharedInstance().handle(
+//            url,
+//            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+//            annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+//    }
+//
+//    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+//        return GIDSignIn.sharedInstance().handle(url,
+//                                                 sourceApplication: sourceApplication,
+//                                                 annotation: annotation)
+//    }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

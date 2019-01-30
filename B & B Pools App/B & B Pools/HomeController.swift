@@ -45,7 +45,6 @@ class HomeController: UIViewController, AuthUIDelegate, GIDSignInUIDelegate, FUI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        googleAuth()
         fbAuth()
         handleAdRequest()
         self.hideKeyboardWhenTappedAround()
@@ -62,9 +61,47 @@ class HomeController: UIViewController, AuthUIDelegate, GIDSignInUIDelegate, FUI
         }
     }
     
-    private func googleAuth() {
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
+    @IBAction func signinTapped(_ sender: Any) {
+        handleSignup()
+    }
+    
+    @IBAction func loginTapped(_ sender: Any) {
+        handleLogin()
+    }
+    
+    @IBAction func handleLoginViews(_ sender: Any) {
+        stackView.isHidden = false
+        userField.isHidden = true
+        emailField.isHidden = false
+        passwordField.isHidden = false
+        signupButton.isHidden = true
+        loginButton.isHidden = false
+        forgotButton.isHidden = false
+        logInButton.isHidden = true
+        signinButton.isHidden = false
+    }
+    
+    @IBAction func handleSigninViews(_ sender: Any) {
+        stackView.isHidden = false
+        userField.isHidden = false
+        emailField.isHidden = false
+        passwordField.isHidden = false
+        signupButton.isHidden = false
+        loginButton.isHidden = true
+        forgotButton.isHidden = true
+        logInButton.isHidden = false
+        signinButton.isHidden = true
+    }
+    
+    // Send a password reset email
+    @IBAction func forgotTapped(_ sender: Any) {
+        // Alert to prompt user for email
+        guard let email = emailField.text else { return }
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+
+            print("Forgot password tapped: Sending email to reset!")
+        }
     }
     
     private func fbAuth() {
@@ -119,65 +156,6 @@ class HomeController: UIViewController, AuthUIDelegate, GIDSignInUIDelegate, FUI
                     self.performSegue(withIdentifier: toMenuVC, sender: self)
                 }
             })
-        }
-    }
-    
-    @IBAction func signinTapped(_ sender: Any) {
-        handleSignup()
-    }
-    
-    @IBAction func loginTapped(_ sender: Any) {
-        handleLogin()
-    }
-    
-    @IBAction func handleLoginViews(_ sender: Any) {
-        stackView.isHidden = false
-        userField.isHidden = true
-        emailField.isHidden = false
-        passwordField.isHidden = false
-        signupButton.isHidden = true
-        loginButton.isHidden = false
-        forgotButton.isHidden = false
-        logInButton.isHidden = true
-        signinButton.isHidden = false
-    }
-    
-    @IBAction func handleSigninViews(_ sender: Any) {
-        stackView.isHidden = false
-        userField.isHidden = false
-        emailField.isHidden = false
-        passwordField.isHidden = false
-        signupButton.isHidden = false
-        loginButton.isHidden = true
-        forgotButton.isHidden = true
-        logInButton.isHidden = false
-        signinButton.isHidden = true
-    }
-    
-    // Send a password reset email
-    @IBAction func forgotTapped(_ sender: Any) {
-        // Alert to prompt user for email
-        guard let email = emailField.text else { return }
-        
-        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-
-            print("Forgot password tapped: Sending email to reset!")
-        }
-    }
-    
-    @IBAction func deleteUser(_ sender: Any) {
-        let user = Auth.auth().currentUser
-        
-        user?.delete { error in
-            if let error = error {
-                // An error happened.
-                if user == nil {
-                    print("Deleting error: \(error.localizedDescription)")
-                }
-            } else {
-                // Account deleted.
-                print("Success deleting user!")
-            }
         }
     }
 }

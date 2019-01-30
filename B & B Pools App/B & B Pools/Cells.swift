@@ -18,7 +18,8 @@ class UserHeader: DatasourceCell {
     
     let dividerLine1: UIView = {
         let line = UIView()
-        line.layer.backgroundColor = UIColor.blue.cgColor
+        let myBlue = UIColor.rgb(red: 17, green: 43, blue: 95)
+        line.layer.backgroundColor = myBlue.cgColor
         return line
     }()
     
@@ -32,7 +33,8 @@ class UserHeader: DatasourceCell {
     
     let dividerLine2: UIView = {
         let line = UIView()
-        line.layer.backgroundColor = UIColor.blue.cgColor
+        let myBlue = UIColor.rgb(red: 17, green: 43, blue: 95)
+        line.layer.backgroundColor = myBlue.cgColor
         return line
     }()
     
@@ -72,9 +74,10 @@ class UserCell: DatasourceCell {
     
     let cellImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 5
-        imageView.layer.borderColor = UIColor.white.cgColor
-        imageView.layer.borderWidth = 1
+//        let myBlue = UIColor.rgb(red: 17, green: 43, blue: 95)
+//        imageView.layer.borderColor = myBlue.cgColor
+//        imageView.layer.cornerRadius = 5.0
+//        imageView.layer.borderWidth = 2.0
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
 
@@ -84,7 +87,7 @@ class UserCell: DatasourceCell {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 13)
+        label.font = UIFont.boldSystemFont(ofSize: 13.0)
         
         return label
     }()
