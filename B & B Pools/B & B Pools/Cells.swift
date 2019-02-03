@@ -12,7 +12,7 @@ class UserHeader: DatasourceCell {
     
     override var datasourceItem: Any? {
         didSet {
-            cellImage.image = UIImage(named: "B&BLogo")
+            cellImage.image = UIImage(named: "logo")
         }
     }
     
@@ -74,10 +74,10 @@ class UserCell: DatasourceCell {
     
     let cellImage: UIImageView = {
         let imageView = UIImageView()
-//        let myBlue = UIColor.rgb(red: 17, green: 43, blue: 95)
-//        imageView.layer.borderColor = myBlue.cgColor
-//        imageView.layer.cornerRadius = 5.0
-//        imageView.layer.borderWidth = 2.0
+        let myBlue = UIColor.rgb(red: 17, green: 43, blue: 95)
+        imageView.layer.borderColor = myBlue.cgColor
+        imageView.layer.cornerRadius = 5.0
+        imageView.layer.borderWidth = 2.0
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
 
