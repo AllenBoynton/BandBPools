@@ -17,23 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poolwater2" translatesAutoresizingMaskIntoConstraints="NO" id="tzo-hJ-Gnw">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poolwater2" translatesAutoresizingMaskIntoConstraints="NO" id="tzo-hJ-Gnw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.34930106997489929" green="0.74563145637512207" blue="0.90591078996658325" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="n5J-fY-nU9">
-                                <rect key="frame" x="51" y="332.66666666666669" width="273" height="146.66666666666669"/>
+                                <rect key="frame" x="74.333333333333329" y="305" width="226.33333333333337" height="122"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="n5J-fY-nU9" secondAttribute="height" multiplier="80:43" id="EVZ-YS-1Sw"/>
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="n5J-fY-nU9" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1U8-ev-Ct5"/>
+                            <constraint firstItem="n5J-fY-nU9" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-40" id="1U8-ev-Ct5"/>
                             <constraint firstItem="tzo-hJ-Gnw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="52J-Ml-O4V"/>
-                            <constraint firstItem="n5J-fY-nU9" firstAttribute="height" secondItem="tzo-hJ-Gnw" secondAttribute="height" multiplier="0.2" id="9J5-5W-W81"/>
-                            <constraint firstItem="tzo-hJ-Gnw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FO0-SR-3Dm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tzo-hJ-Gnw" secondAttribute="bottom" id="R4S-ep-gUj"/>
+                            <constraint firstItem="n5J-fY-nU9" firstAttribute="height" secondItem="tzo-hJ-Gnw" secondAttribute="height" multiplier="0.15" id="9J5-5W-W81"/>
+                            <constraint firstItem="tzo-hJ-Gnw" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="SV0-hY-bq7"/>
                             <constraint firstItem="n5J-fY-nU9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VIu-PZ-eVz"/>
+                            <constraint firstAttribute="bottom" secondItem="tzo-hJ-Gnw" secondAttribute="bottom" id="nWv-gp-nHX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tzo-hJ-Gnw" secondAttribute="trailing" id="olX-aF-FT8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -41,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
     <resources>
