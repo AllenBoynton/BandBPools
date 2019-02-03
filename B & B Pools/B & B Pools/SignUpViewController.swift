@@ -40,23 +40,34 @@ class SignUpViewController: UIViewController {
         return view
     }()
     
-        private let userField: UITextFieldPadding = {
-            let field = UITextFieldPadding()
-            field.placeholder = "Username"
-            field.autocapitalizationType = .none
-            field.backgroundColor = .white
-            field.layer.cornerRadius = 5.0
-            field.layer.borderWidth = 1.0
-            field.layer.borderColor = UIColor.mainBlue.cgColor
-            field.returnKeyType = .next
-            field.keyboardType = .default
-            return field
-        }()
+    private let logoImage: UIImageView = {
+        let imageName = "logo"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let userField: UITextFieldPadding = {
+        let field = UITextFieldPadding()
+        field.placeholder = "Username"
+        field.autocapitalizationType = .none
+//            field.setBottomBorder()
+        field.backgroundColor = .clear
+        field.layer.cornerRadius = 5.0
+        field.layer.borderWidth = 1.0
+        field.layer.borderColor = UIColor.mainBlue.cgColor
+        field.returnKeyType = .next
+        field.keyboardType = .default
+        return field
+    }()
     
     private let emailField: UITextFieldPadding = {
         let field = UITextFieldPadding()
-        field.placeholder = "Email"
+        field.placeholder = "Email Address"
         field.autocapitalizationType = .none
+//        field.setBottomBorder()
         field.backgroundColor = .white
         field.layer.cornerRadius = 5.0
         field.layer.borderWidth = 1.0
@@ -71,6 +82,7 @@ class SignUpViewController: UIViewController {
         field.placeholder = "Password"
         field.autocapitalizationType = .none
         field.isSecureTextEntry = true
+//        field.setBottomBorder()
         field.backgroundColor = .white
         field.layer.cornerRadius = 5.0
         field.layer.borderWidth = 1.0
@@ -79,12 +91,33 @@ class SignUpViewController: UIViewController {
         return field
     }()
     
+    private let dividerLine: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.frame = CGRect(x: 0, y: 0, width: 50, height: 2)
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
+    private let connectWithLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        let attributedText = NSMutableAttributedString(string: "Or Connect With", attributes: [NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Medium", size: 18)!, NSAttributedString.Key.foregroundColor : UIColor.black])
+        label.attributedText = attributedText
+        label.textAlignment = .center
+        return label
+    }()
+    
     private let signUpButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Sign Up", for: .normal)
-        button.setTitleColor(.mainBlue, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        button.backgroundColor = .mainBlue
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        button.layer.cornerRadius = 5.0
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.white.cgColor
         button.addTarget(self, action: #selector(handleSignup), for: .touchUpInside)
         return button
     }()
@@ -118,6 +151,7 @@ class SignUpViewController: UIViewController {
     private func setupLayout() {
         view.addSubview(bgImageView)
         view.addSubview(logoContainerView)
+        logoContainerView.addSubview(logoImage)
         
         NSLayoutConstraint.activate([
             bgImageView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -128,37 +162,29 @@ class SignUpViewController: UIViewController {
             logoContainerView.topAnchor.constraint(equalTo: view.topAnchor),
             logoContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             logoContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            logoContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
+            logoContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5),
+            
+            logoImage.centerYAnchor.constraint(equalTo: logoContainerView.centerYAnchor, constant: 0),
+            logoImage.centerXAnchor.constraint(equalTo: logoContainerView.centerXAnchor, constant: 0),
+            logoImage.widthAnchor.constraint(equalTo: logoContainerView.widthAnchor, multiplier: 0.6),
+            logoImage.heightAnchor.constraint(equalTo: logoContainerView.heightAnchor, multiplier: 0.3)
             ])
     }
     
     fileprivate func setupStackView() {
-        textStackView = UIStackView(arrangedSubviews: [userField, emailField, passwordField, googleButton])
-        textStackView.distribution = .fillEqually
-        textStackView.spacing = 16
-        textStackView.axis = .vertical
-        
-        buttonStackView = UIStackView(arrangedSubviews: [signUpButton])
-        buttonStackView.distribution = .fillEqually
-        buttonStackView.spacing = 50
-        
-//        socialMediaStack = UIStackView(arrangedSubviews: [fbLoginButton, googleButton])
-//        socialMediaStack.translatesAutoresizingMaskIntoConstraints = false
-//        socialMediaStack.distribution = .fillEqually
-
-        stackView = UIStackView(arrangedSubviews: [textStackView, buttonStackView])
+        stackView = UIStackView(arrangedSubviews: [userField, emailField, passwordField, signUpButton, connectWithLabel, fbLoginButton, googleButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         stackView.spacing = 16
         stackView.axis = .vertical
         
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: logoContainerView.bottomAnchor, constant: 0),
+            stackView.topAnchor.constraint(equalTo: logoContainerView.bottomAnchor, constant: -100),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80)
+            stackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
             ])
     }
     
@@ -332,6 +358,8 @@ extension SignUpViewController: UITextFieldDelegate {
     //MARK: - Controlling the Keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
+        case userField:
+            emailField.becomeFirstResponder()
         case emailField:
             passwordField.becomeFirstResponder()
         case passwordField:
