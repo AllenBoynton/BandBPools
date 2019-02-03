@@ -27,6 +27,7 @@
 		0FD0DF032202841900DD49F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FD0DF022202841900DD49F8 /* GoogleService-Info.plist */; };
 		0FD0DF05220668B000DD49F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0DF04220668B000DD49F8 /* LoginViewController.swift */; };
 		0FD0DF07220697B500DD49F8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0DF06220697B500DD49F8 /* SignUpViewController.swift */; };
+		0FD0DF0922069E0A00DD49F8 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0DF0822069E0A00DD49F8 /* UnderlineTextField.swift */; };
 		0FE54AFD216FD11400BB725A /* MenuCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE54AFC216FD11400BB725A /* MenuCollectionVC.swift */; };
 		0FE54B012170047400BB725A /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE54B002170047400BB725A /* Constraints.swift */; };
 		67AC555605636A245CD42E70 /* Pods_B___B_Pools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1112E17EF812BDD1DB7D7F61 /* Pods_B___B_Pools.framework */; };
@@ -56,6 +57,7 @@
 		0FD0DF022202841900DD49F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FD0DF04220668B000DD49F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0FD0DF06220697B500DD49F8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0FD0DF0822069E0A00DD49F8 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		0FE54AFC216FD11400BB725A /* MenuCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionVC.swift; sourceTree = "<group>"; };
 		0FE54B002170047400BB725A /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		1112E17EF812BDD1DB7D7F61 /* Pods_B___B_Pools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_B___B_Pools.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 				0F05FD48214B34AB00F2D0CA /* UIView.swift */,
 				0FE54B002170047400BB725A /* Constraints.swift */,
 				0FD0DEF821FE166100DD49F8 /* KeyboardExt.swift */,
+				0FD0DF0822069E0A00DD49F8 /* UnderlineTextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				0FD0DF07220697B500DD49F8 /* SignUpViewController.swift in Sources */,
 				0F4503C5210C2D5500BF296F /* DesignableTextViews.swift in Sources */,
 				0F4503C7210C2D5500BF296F /* MaterialView.swift in Sources */,
+				0FD0DF0922069E0A00DD49F8 /* UnderlineTextField.swift in Sources */,
 				0FE54AFD216FD11400BB725A /* MenuCollectionVC.swift in Sources */,
 				0F4503CA210C2D5500BF296F /* DropShadow.swift in Sources */,
 				0F4503C9210C2D5500BF296F /* DesignableImageViews.swift in Sources */,
