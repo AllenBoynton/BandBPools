@@ -21,12 +21,13 @@ class LoginViewController: UIViewController {
     private var fbLoginButton = FBSDKLoginButton()
     private var googleButton = GIDSignInButton()
     private var stackView: UIStackView!
+    private var connectViewStack: UIStackView!
     private var textStackView: UIStackView!
     private var socialMediaStack: UIStackView!
     private var buttonStackView: UIStackView!
     
     private let bgImageView: UIImageView = {
-        let imageName = "bg"
+        let imageName = "bg1"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,23 +41,11 @@ class LoginViewController: UIViewController {
         return view
     }()
     
-//    private let userField: UITextFieldPadding = {
-//        let field = UITextFieldPadding()
-//        field.placeholder = "Username"
-//        field.autocapitalizationType = .none
-//        field.backgroundColor = .white
-//        field.layer.cornerRadius = 5.0
-//        field.layer.borderWidth = 1.0
-//        field.layer.borderColor = UIColor.mainBlue.cgColor
-//        field.returnKeyType = .next
-//        field.keyboardType = .default
-//        return field
-//    }()
-    
     private let emailField: UITextFieldPadding = {
         let field = UITextFieldPadding()
-        field.placeholder = "Email"
+        field.placeholder = "Email Address"
         field.autocapitalizationType = .none
+//        field.setBottomBorder()
         field.backgroundColor = .white
         field.layer.cornerRadius = 5.0
         field.layer.borderWidth = 1.0
@@ -71,12 +60,30 @@ class LoginViewController: UIViewController {
         field.placeholder = "Password"
         field.autocapitalizationType = .none
         field.isSecureTextEntry = true
+//        field.setBottomBorder()
         field.backgroundColor = .white
         field.layer.cornerRadius = 5.0
         field.layer.borderWidth = 1.0
         field.layer.borderColor = UIColor.mainBlue.cgColor
         field.returnKeyType = .done
         return field
+    }()
+    
+    private let dividerLine: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.frame = CGRect(x: 0, y: 0, width: 50, height: 2)
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
+    private let connectWithLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        let attributedText = NSMutableAttributedString(string: "Or Connect With", attributes: [NSAttributedString.Key.font : UIFont(name: "HelveticaNeue", size: 16)!, NSAttributedString.Key.foregroundColor : UIColor.black])
+        label.attributedText = attributedText
+        label.textAlignment = .center
+        return label
     }()
     
     private let forgotButton: UIButton = {
@@ -92,9 +99,13 @@ class LoginViewController: UIViewController {
     private let loginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .mainBlue
         button.setTitle("Log In", for: .normal)
-        button.setTitleColor(.mainBlue, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        button.layer.cornerRadius = 5.0
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.white.cgColor
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
@@ -116,7 +127,7 @@ class LoginViewController: UIViewController {
         setupStackView()
         handleAdRequest()
         self.hideKeyboardWhenTappedAround()
-        self.moveKeyboard()
+//        self.moveKeyboard()
         emailField.delegate = self
         passwordField.delegate = self
         fbLoginButton.delegate = self
@@ -136,25 +147,31 @@ class LoginViewController: UIViewController {
             logoContainerView.topAnchor.constraint(equalTo: view.topAnchor),
             logoContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             logoContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            logoContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
+            logoContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.75)
             ])
     }
     
     fileprivate func setupStackView() {
-        textStackView = UIStackView(arrangedSubviews: [emailField, passwordField, forgotButton, googleButton])
+        textStackView = UIStackView(arrangedSubviews: [emailField, passwordField, loginButton])
+        textStackView.translatesAutoresizingMaskIntoConstraints = false
         textStackView.distribution = .fillEqually
         textStackView.spacing = 16
         textStackView.axis = .vertical
         
-        buttonStackView = UIStackView(arrangedSubviews: [loginButton])
-        buttonStackView.distribution = .fillEqually
-        buttonStackView.spacing = 50
+        buttonStackView = UIStackView(arrangedSubviews: [forgotButton])
+        buttonStackView.translatesAutoresizingMaskIntoConstraints = false
+        buttonStackView.distribution = .fill
+//        buttonStackView.spacing = 50
         
-//        socialMediaStack = UIStackView(arrangedSubviews: [fbLoginButton, googleButton])
-//        socialMediaStack.translatesAutoresizingMaskIntoConstraints = false
-//        socialMediaStack.distribution = .fillEqually
+        connectViewStack = UIStackView(arrangedSubviews: [connectWithLabel])
+        connectViewStack.translatesAutoresizingMaskIntoConstraints = false
+        connectViewStack.distribution = .fill
+        
+        socialMediaStack = UIStackView(arrangedSubviews: [fbLoginButton, googleButton])
+        socialMediaStack.translatesAutoresizingMaskIntoConstraints = false
+        socialMediaStack.distribution = .fillEqually
 
-        stackView = UIStackView(arrangedSubviews: [textStackView, buttonStackView])
+        stackView = UIStackView(arrangedSubviews: [textStackView, buttonStackView, connectViewStack, socialMediaStack])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillProportionally
         stackView.spacing = 16
@@ -163,10 +180,10 @@ class LoginViewController: UIViewController {
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: logoContainerView.bottomAnchor, constant: 0),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80)
+            stackView.bottomAnchor.constraint(equalTo: logoContainerView.bottomAnchor, constant: -40)
             ])
     }
     
@@ -191,7 +208,7 @@ class LoginViewController: UIViewController {
                     return
                 } else {
                     print("Success! Email: \(email), Password: \(password)")
-                    let menuView = self.storyboard?.instantiateViewController(withIdentifier: "MenuCollectionVC") as! MenuCollectionVC
+                    let menuView = MenuCollectionVC()
                     self.navigationController?.pushViewController(menuView, animated: true)
                 }
             })
