@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     private var buttonStackView: UIStackView!
     
     private let bgImageView: UIImageView = {
-        let imageName = "bg1"
+        let imageName = "bg"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,36 +40,18 @@ class LoginViewController: UIViewController {
         return view
     }()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        let attributedText = NSMutableAttributedString(string: "POOLFINDER", attributes: [NSAttributedString.Key.font : UIFont(name: "Verdana-BoldItalic", size: 22)!, NSAttributedString.Key.foregroundColor : UIColor.mainBlue])
-        label.attributedText = attributedText
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let logoImage: UIImageView = {
-        let imageName = "logo"
-        let image = UIImage(named: imageName)
-        let imageView = UIImageView(image: image)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-    
-    private let userField: UITextFieldPadding = {
-        let field = UITextFieldPadding()
-        field.placeholder = "Username"
-        field.autocapitalizationType = .none
-        field.backgroundColor = .white
-        field.layer.cornerRadius = 5.0
-        field.layer.borderWidth = 1.0
-        field.layer.borderColor = UIColor.mainBlue.cgColor
-        field.returnKeyType = .next
-        field.keyboardType = .default
-        return field
-    }()
+//    private let userField: UITextFieldPadding = {
+//        let field = UITextFieldPadding()
+//        field.placeholder = "Username"
+//        field.autocapitalizationType = .none
+//        field.backgroundColor = .white
+//        field.layer.cornerRadius = 5.0
+//        field.layer.borderWidth = 1.0
+//        field.layer.borderColor = UIColor.mainBlue.cgColor
+//        field.returnKeyType = .next
+//        field.keyboardType = .default
+//        return field
+//    }()
     
     private let emailField: UITextFieldPadding = {
         let field = UITextFieldPadding()
@@ -107,58 +89,21 @@ class LoginViewController: UIViewController {
         return button
     }()
     
-    //    private let customFBLoginButton: UIButton = {
-    //        let title = "Login with Facebook"
-    //        let button = UIButton(type: .custom)
-    //        var image = UIImage(named: "f")
-    //        button.backgroundColor = UIColor.rgb(red: 66, green: 89, blue: 147)
-    //        button.setTitle(title, for: .normal)
-    //        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
-    //        button.setTitleColor(.white, for: .normal)
-    //        button.setImage(image, for: .normal)
-    //        button.layer.cornerRadius = 5.0
-    //        button.addTarget(self, action: #selector(handleCustomFBLogin), for: .touchUpInside)
-    //        button.imageView?.contentMode = .scaleAspectFit
-    //        button.imageView?.backgroundColor = UIColor.mainBlue
-    //        button.layer.masksToBounds = true
-    //        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: -160, bottom: 0, right: 0)
-    //        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 185)
-    //        return button
-    //    }()
-    
     private let loginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(.mainBlue, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        button.addTarget(self, action: #selector(handleLoginViews), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
-    }()
-    
-    private let signUpButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Sign Up", for: .normal)
-        button.setTitleColor(.mainBlue, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        button.addTarget(self, action: #selector(handleSignUpViews), for: .touchUpInside)
-        return button
-    }()
-    
-    private let creatorLabel: UILabel = {
-        let label = UILabel()
-        let attributedText = NSMutableAttributedString(string: "Created by Allen Boynton 2019", attributes: [NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Medium", size: 13)!, NSAttributedString.Key.foregroundColor : UIColor.mainBlue])
-        label.attributedText = attributedText
-        label.textAlignment = .center
-        return label
     }()
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        textStackView.isHidden = true
+        // Unhides nav bar and makes items white
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.navigationBar.tintColor = .white
         if !stackView.isHidden {
-            userField.text = ""
             emailField.text = ""
             passwordField.text = ""
         }
@@ -166,12 +111,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Log In"
         setupLayout()
         setupStackView()
         handleAdRequest()
         self.hideKeyboardWhenTappedAround()
         self.moveKeyboard()
-        userField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self
         fbLoginButton.delegate = self
@@ -179,12 +124,8 @@ class LoginViewController: UIViewController {
     }
     
     private func setupLayout() {
-        view.backgroundColor = .white
         view.addSubview(bgImageView)
         view.addSubview(logoContainerView)
-        view.addSubview(creatorLabel)
-        logoContainerView.addSubview(logoImage)
-        logoContainerView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
             bgImageView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -192,37 +133,27 @@ class LoginViewController: UIViewController {
             bgImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bgImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            titleLabel.bottomAnchor.constraint(equalTo: logoImage.topAnchor),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.08),
-            
             logoContainerView.topAnchor.constraint(equalTo: view.topAnchor),
             logoContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             logoContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            logoContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5),
-            
-            logoImage.centerXAnchor.constraint(equalTo: logoContainerView.centerXAnchor),
-            logoImage.centerYAnchor.constraint(equalTo: logoContainerView.centerYAnchor, constant: -20),
-            logoImage.heightAnchor.constraint(equalTo: logoContainerView.heightAnchor, multiplier: 0.25)
+            logoContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
             ])
-        
-        creatorLabel.anchor(nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 60, rightConstant: 0, widthConstant: 0, heightConstant: 0)
     }
     
     fileprivate func setupStackView() {
-        textStackView = UIStackView(arrangedSubviews: [userField, emailField, passwordField, forgotButton, googleButton/*customFBLoginButton*/])
+        textStackView = UIStackView(arrangedSubviews: [emailField, passwordField, forgotButton, googleButton])
         textStackView.distribution = .fillEqually
         textStackView.spacing = 16
         textStackView.axis = .vertical
         
-        buttonStackView = UIStackView(arrangedSubviews: [loginButton, signUpButton])
+        buttonStackView = UIStackView(arrangedSubviews: [loginButton])
         buttonStackView.distribution = .fillEqually
         buttonStackView.spacing = 50
         
-        //        socialMediaStack = UIStackView(arrangedSubviews: [fbLoginButton, googleButton])
-        //        socialMediaStack.translatesAutoresizingMaskIntoConstraints = false
-        //        socialMediaStack.distribution = .fillEqually
-        
+//        socialMediaStack = UIStackView(arrangedSubviews: [fbLoginButton, googleButton])
+//        socialMediaStack.translatesAutoresizingMaskIntoConstraints = false
+//        socialMediaStack.distribution = .fillEqually
+
         stackView = UIStackView(arrangedSubviews: [textStackView, buttonStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillProportionally
@@ -232,77 +163,27 @@ class LoginViewController: UIViewController {
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 40),
+            stackView.topAnchor.constraint(equalTo: logoContainerView.bottomAnchor, constant: 0),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.widthAnchor.constraint(equalToConstant: 250),
-            stackView.bottomAnchor.constraint(equalTo: creatorLabel.topAnchor, constant: 16)
+            stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80)
             ])
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if Auth.auth().currentUser != nil {
-            //            performSegue(withIdentifier: toMenuVC, sender: self)
+//            performSegue(withIdentifier: toMenuVC, sender: self)
         } else {
-            userField.text = ""
             emailField.text = ""
             passwordField.text = ""
         }
-    }
-    
-    fileprivate func signUpTapped() {
-        handleSignup()
     }
     
     fileprivate func loginTapped() {
         handleLogin()
     }
     
-    @objc func handleLoginViews(_ sender: UIButton) {
-        textStackView.isHidden = false
-        userField.isHidden = true
-        emailField.isHidden = false
-        passwordField.isHidden = false
-        forgotButton.isHidden = false
-        signUpButton.setTitleColor(.lightGray, for: .normal)
-        loginButton.setTitleColor(.mainBlue, for: .normal)
-    }
-    
-    @objc func handleSignUpViews(_ sender: UIButton) {
-        textStackView.isHidden = false
-        userField.isHidden = false
-        emailField.isHidden = false
-        passwordField.isHidden = false
-        forgotButton.isHidden = true
-        loginButton.setTitleColor(.lightGray, for: .normal)
-        signUpButton.setTitleColor(.mainBlue, for: .normal)
-    }
-    
-    private func handleSignup() {
-        guard let username = userField.text else { return }
-        guard let email = emailField.text else { return }
-        guard let password = passwordField.text else { return }
-        
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-            if error == nil && user != nil {
-                print("Success! Email: \(email), Password: \(password)")
-                
-                let menuView = self.storyboard?.instantiateViewController(withIdentifier: "MenuCollectionVC") as! MenuCollectionVC
-                self.navigationController?.pushViewController(menuView, animated: true)
-                
-                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                changeRequest?.displayName = username
-                changeRequest?.commitChanges(completion: { (error) in
-                    if error == nil {
-                        print("User display name changed! User: \(username)")
-                    }
-                })
-            } else {
-                print("Error: \(error!.localizedDescription)")
-            }
-        })
-    }
-    
-    private func handleLogin() {
+    @objc private func handleLogin() {
         if let email = emailField.text, let password = passwordField.text {
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 if let firebaseError = error {
@@ -329,17 +210,6 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: FBSDKLoginButtonDelegate {
-    @objc func handleCustomFBLogin() {
-        FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
-            if err != nil {
-                print("Custom FB login failed:", err as Any)
-                return
-            }
-            //            self.customFBLoginButton.setTitle("Log out", for: .normal)
-            //            self.customFBLoginButton.setTitleColor(.lightGray, for: .normal)
-            self.showEmailAddress()
-        }
-    }
     
     fileprivate func showEmailAddress() {
         // Fetch email and profile info
@@ -378,7 +248,6 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
                 }
                 print("Successfully logged in with our user: ", user ?? "")
             }
-            
         })
     }
     
@@ -391,10 +260,18 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         FBSDKLoginManager().logOut()
-        //        customFBLoginButton.setTitle("Login with Facebook", for: .normal)
-        //        customFBLoginButton.setTitleColor(.white, for: .normal)
         print("Did log out of Facebook")
     }
+    
+//    @objc func handleCustomFBLogin() {
+//        FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
+//            if err != nil {
+//                print("Custom FB login failed:", err as Any)
+//                return
+//            }
+//            self.showEmailAddress()
+//        }
+//    }
 }
 
 extension LoginViewController: GADBannerViewDelegate {
@@ -476,8 +353,6 @@ extension LoginViewController: UITextFieldDelegate {
     //MARK: - Controlling the Keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        case userField:
-            emailField.becomeFirstResponder()
         case emailField:
             passwordField.becomeFirstResponder()
         case passwordField:
