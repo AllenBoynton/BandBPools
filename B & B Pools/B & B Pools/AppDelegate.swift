@@ -32,12 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         // Initialize the Google Mobile Ads SDK.
         GADMobileAds.configure(withApplicationID: "YOUR_ADMOB_APP_ID")
-        
-        let navigationController = UINavigationController()
+
+        // Change nav bar color
         let navigationBarAppearance = UINavigationBar.appearance()
-        navigationBarAppearance.barTintColor = UIColor.rgb(red: 17, green: 43, blue: 95)
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white.cgColor]
-        navigationController.navigationBar.titleTextAttributes = textAttributes
+        navigationBarAppearance.barTintColor = UIColor.rgb(red: 89, green: 190, blue: 231)
+        
+        // Change nav bar title color/font/size
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
+        ]
+        UINavigationBar.appearance().titleTextAttributes = attrs
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
