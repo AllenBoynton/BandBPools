@@ -15,19 +15,14 @@ import GoogleMobileAds
 import GoogleSignIn
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     private var bannerView: GADBannerView!
-    private var fbLoginButton = FBSDKLoginButton()
-    private var googleButton = GIDSignInButton()
     private var stackView: UIStackView!
-    private var connectViewStack: UIStackView!
-    private var textStackView: UIStackView!
-    private var socialMediaStack: UIStackView!
-    private var buttonStackView: UIStackView!
+    private let menuView = MenuCollectionVC()
     
     private let bgImageView: UIImageView = {
-        let imageName = "bg1"
+        let imageName = "bg"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,11 +36,34 @@ class LoginViewController: UIViewController {
         return view
     }()
     
+    private let logoImage: UIImageView = {
+        let imageName = "logo"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let userField: UITextFieldPadding = {
+        let field = UITextFieldPadding()
+        field.translatesAutoresizingMaskIntoConstraints = false
+        field.placeholder = "Username"
+        field.autocapitalizationType = .none
+        field.backgroundColor = .clear
+        field.layer.cornerRadius = 5.0
+        field.layer.borderWidth = 1.0
+        field.layer.borderColor = UIColor.mainBlue.cgColor
+        field.returnKeyType = .next
+        field.keyboardType = .default
+        return field
+    }()
+    
     private let emailField: UITextFieldPadding = {
         let field = UITextFieldPadding()
+        field.translatesAutoresizingMaskIntoConstraints = false
         field.placeholder = "Email Address"
         field.autocapitalizationType = .none
-//        field.setBottomBorder()
         field.backgroundColor = .white
         field.layer.cornerRadius = 5.0
         field.layer.borderWidth = 1.0
@@ -57,10 +75,10 @@ class LoginViewController: UIViewController {
     
     private let passwordField: UITextFieldPadding = {
         let field = UITextFieldPadding()
+        field.translatesAutoresizingMaskIntoConstraints = false
         field.placeholder = "Password"
         field.autocapitalizationType = .none
         field.isSecureTextEntry = true
-//        field.setBottomBorder()
         field.backgroundColor = .white
         field.layer.cornerRadius = 5.0
         field.layer.borderWidth = 1.0
@@ -70,6 +88,14 @@ class LoginViewController: UIViewController {
     }()
     
     private let dividerLine: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.frame = CGRect(x: 0, y: 0, width: 50, height: 2)
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
+    private let dividerLine2: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.frame = CGRect(x: 0, y: 0, width: 50, height: 2)
@@ -96,6 +122,20 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private let signUpButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Sign Up", for: .normal)
+        button.backgroundColor = .mainBlue
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        button.layer.cornerRadius = 5.0
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.white.cgColor
+        button.addTarget(self, action: #selector(handleSignup), for: .touchUpInside)
+        return button
+    }()
+    
     private let loginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -110,33 +150,69 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private let fbLoginButton: FBSDKLoginButton = {
+        let button = FBSDKLoginButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let googleButton: GIDSignInButton = {
+        let button = GIDSignInButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 5.0
+        button.layer.masksToBounds = true
+        return button
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         // Unhides nav bar and makes items white
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.navigationBar.tintColor = .white
-        if !stackView.isHidden {
-            emailField.text = ""
-            passwordField.text = ""
-        }
+        
+        handleLoginOrSignUp(num: loginVsSignup)
+        print(loginVsSignup)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Log In"
+        
         setupLayout()
-        setupStackView()
+        setupStackViewLayout()
         handleAdRequest()
-        self.hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
 //        self.moveKeyboard()
         emailField.delegate = self
         passwordField.delegate = self
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["email", "public_profile"]
+        GIDSignIn.sharedInstance()?.uiDelegate = self
+    }
+    
+    private func handleLoginOrSignUp(num: UInt) {
+        switch num {
+        case 1:
+            self.title = "Sign Up"
+            userField.delegate = self
+            loginButton.isHidden = true
+            forgotButton.isHidden = true
+            userField.isHidden = false
+            signUpButton.isHidden = false
+        case 2:
+            self.title = "Log In"
+            userField.isHidden = true
+            signUpButton.isHidden = true
+            forgotButton.isHidden = false
+            loginButton.isHidden = false
+        default:
+            print("Page setup error")
+            break
+        }
     }
     
     private func setupLayout() {
         view.addSubview(bgImageView)
         view.addSubview(logoContainerView)
+        logoContainerView.addSubview(logoImage)
         
         NSLayoutConstraint.activate([
             bgImageView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -147,82 +223,185 @@ class LoginViewController: UIViewController {
             logoContainerView.topAnchor.constraint(equalTo: view.topAnchor),
             logoContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             logoContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            logoContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.75)
+            logoContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5),
+            
+            logoImage.centerYAnchor.constraint(equalTo: logoContainerView.centerYAnchor, constant: 0),
+            logoImage.centerXAnchor.constraint(equalTo: logoContainerView.centerXAnchor, constant: 0),
+            logoImage.widthAnchor.constraint(equalTo: logoContainerView.widthAnchor, multiplier: 0.6),
+            logoImage.heightAnchor.constraint(equalTo: logoContainerView.heightAnchor, multiplier: 0.3)
             ])
     }
     
-    fileprivate func setupStackView() {
-        textStackView = UIStackView(arrangedSubviews: [emailField, passwordField, loginButton])
-        textStackView.translatesAutoresizingMaskIntoConstraints = false
-        textStackView.distribution = .fillEqually
-        textStackView.spacing = 16
-        textStackView.axis = .vertical
-        
-        buttonStackView = UIStackView(arrangedSubviews: [forgotButton])
-        buttonStackView.translatesAutoresizingMaskIntoConstraints = false
-        buttonStackView.distribution = .fill
-//        buttonStackView.spacing = 50
-        
-        connectViewStack = UIStackView(arrangedSubviews: [connectWithLabel])
-        connectViewStack.translatesAutoresizingMaskIntoConstraints = false
-        connectViewStack.distribution = .fill
-        
-        socialMediaStack = UIStackView(arrangedSubviews: [fbLoginButton, googleButton])
-        socialMediaStack.translatesAutoresizingMaskIntoConstraints = false
-        socialMediaStack.distribution = .fillEqually
-
-        stackView = UIStackView(arrangedSubviews: [textStackView, buttonStackView, connectViewStack, socialMediaStack])
+    private func setupStackViewLayout() {
+        stackView = UIStackView(arrangedSubviews: [userField, emailField, passwordField, loginButton, forgotButton, signUpButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         stackView.spacing = 16
         stackView.axis = .vertical
         
         view.addSubview(stackView)
+        view.addSubview(dividerLine)
+        view.addSubview(connectWithLabel)
+        view.addSubview(dividerLine2)
+        view.addSubview(fbLoginButton)
+        view.addSubview(googleButton)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            stackView.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 40),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
-            stackView.bottomAnchor.constraint(equalTo: logoContainerView.bottomAnchor, constant: -40)
+            stackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25),
+            
+            dividerLine.heightAnchor.constraint(equalToConstant: 2),
+            dividerLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 48),
+            dividerLine.trailingAnchor.constraint(equalTo: connectWithLabel.leadingAnchor, constant: 0),
+            dividerLine.centerYAnchor.constraint(equalTo: connectWithLabel.centerYAnchor),
+            
+            connectWithLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
+            connectWithLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            connectWithLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.5),
+            connectWithLabel.heightAnchor.constraint(equalToConstant: 30),
+            
+            dividerLine2.heightAnchor.constraint(equalToConstant: 2),
+            dividerLine2.leadingAnchor.constraint(equalTo: connectWithLabel.trailingAnchor, constant: 0),
+            dividerLine2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -48),
+            dividerLine2.centerYAnchor.constraint(equalTo: connectWithLabel.centerYAnchor),
+
+            fbLoginButton.topAnchor.constraint(equalTo: connectWithLabel.bottomAnchor, constant: 16),
+            fbLoginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            fbLoginButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1.0),
+//            fbLoginButton.heightAnchor.constraint(equalToConstant: 28),
+            
+            googleButton.topAnchor.constraint(equalTo: fbLoginButton.bottomAnchor, constant: 16),
+            googleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)//,
+//            googleButton.widthAnchor.constraint(equalTo: fbLoginButton.widthAnchor, constant: 10),
+//            googleButton.heightAnchor.constraint(equalToConstant: 60)
             ])
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil {
-//            performSegue(withIdentifier: toMenuVC, sender: self)
-        } else {
-            emailField.text = ""
-            passwordField.text = ""
-        }
+//        if Auth.auth().currentUser != nil {
+//
+//        }
     }
     
-    fileprivate func loginTapped() {
-        handleLogin()
+    @objc private func handleSignup() {
+        guard let username = userField.text else { return }
+        guard let email = emailField.text else { return }
+        guard let password = passwordField.text else { return }
+        
+        if password.isEmpty == false && email.isEmpty == false && username.isEmpty == false {
+            if isValidEmail(testStr: emailField.text!) {
+                //email is valid
+                if ((passwordField.text?.count)!) >= 6 && ((passwordField.text?.count)!) <= 12 {
+                    Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                        if error == nil && user != nil {
+                            print("Success! Email: \(email), Password: \(password)")
+                            self.navigationController?.pushViewController(self.menuView, animated: true)
+                            
+//                            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+//                            changeRequest?.displayName = username
+//                            changeRequest?.commitChanges(completion: { (error) in
+//                                if error == nil {
+//                                    print("User display name changed! User: \(username)")
+//                                }
+//                            })
+                        } else {
+                            print("Error: \(error!.localizedDescription)")
+                        }
+                    })
+                } else {
+                    isInvalidPasswordAlert()
+                }
+            } else {
+                isInvalidEmailAlert()
+            }
+        } else {
+            isEmptyFieldAlert()
+        }
     }
     
     @objc private func handleLogin() {
-        if let email = emailField.text, let password = passwordField.text {
-            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-                if let firebaseError = error {
-                    print("Error: \(firebaseError.localizedDescription)")
-                    return
+        if passwordField.text?.isEmpty == false && emailField.text?.isEmpty == false {
+            if isValidEmail(testStr: emailField.text!) {
+                //email is valid
+                if ((passwordField.text?.count)!) >= 6 && ((passwordField.text?.count)!) <= 12 {
+                    if let email = emailField.text, let password = passwordField.text {
+                        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                            if let firebaseError = error {
+                                print("Error: \(firebaseError.localizedDescription)")
+                                return
+                            } else {
+                                print("Success! Email: \(email), Password: \(password)")
+                                self.navigationController?.pushViewController(self.menuView, animated: true)
+                            }
+                        })
+                    }
                 } else {
-                    print("Success! Email: \(email), Password: \(password)")
-                    let menuView = MenuCollectionVC()
-                    self.navigationController?.pushViewController(menuView, animated: true)
+                    isInvalidPasswordAlert()
                 }
-            })
+            } else {
+                isInvalidEmailAlert()
+            }
+        } else {
+            isEmptyFieldAlert()
         }
+    }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluate(with: testStr)
+        return result
+    }
+    
+    func isEmptyFieldAlert() {
+        let emptyFieldAlert = UIAlertController(title: "Invalid Entries", message: "Please enter a valid address and password", preferredStyle: .alert)
+        emptyFieldAlert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: nil))
+        //PRESENT ALERT
+        self.present(emptyFieldAlert, animated: true, completion: nil)
+    }
+    
+    func isInvalidEmailAlert() {
+        let invalidEntryAlert = UIAlertController(title: "Invalid E-Mail Address", message: "Please enter a valid address", preferredStyle: .alert)
+        invalidEntryAlert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: nil))
+        //PRESENT ALERT
+        self.present(invalidEntryAlert, animated: true, completion: nil)
+    }
+    
+    func isInvalidPasswordAlert() {
+        let invalidPasswordAlert = UIAlertController(title: "Invalid Password", message: "Please enter a valid password between 6 and 12 characters", preferredStyle: .alert)
+        invalidPasswordAlert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: nil))
+        //PRESENT ALERT
+        self.present(invalidPasswordAlert, animated: true, completion: nil)
     }
     
     // Send a password reset email
     @objc fileprivate func forgotTapped() {
-        // Alert to prompt user for email
-        guard let email = emailField.text else { return }
-        
-        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-            print("Forgot password tapped: Sending email to reset!")
+        let forgotPasswordAlert = UIAlertController(title: "Forgot your password?", message: "Enter email address", preferredStyle: .alert)
+        forgotPasswordAlert.addTextField { (textField) in
+            textField.placeholder = "Enter email address"
         }
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Reset Password", style: .default, handler: { (action) in
+            let resetEmail = forgotPasswordAlert.textFields?.first?.text
+            Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: { (error) in
+                DispatchQueue.main.async {
+                    //Use "if let" to access the error, if it is non-nil
+                    if let error = error {
+                        let resetFailedAlert = UIAlertController(title: "Reset Failed", message: error.localizedDescription, preferredStyle: .alert)
+                        resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(resetFailedAlert, animated: true, completion: nil)
+                    } else {
+                        let resetEmailSentAlert = UIAlertController(title: "Reset email sent successfully", message: "Check your email", preferredStyle: .alert)
+                        resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(resetEmailSentAlert, animated: true, completion: nil)
+                    }
+                }
+            })
+        }))
+        //PRESENT ALERT
+        self.present(forgotPasswordAlert, animated: true, completion: nil)
     }
 }
 
@@ -244,26 +423,28 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             Auth.auth().signInAndRetrieveData(with: credentials) { (user, error) in
                 if error != nil {
                     print("Something went wrong with our FB user: ", error ?? "")
+                } else {
+//                if let user = Auth.auth().currentUser {
+//                    let userName = user.displayName
+//                    let email = user.email!
+//
+//                    let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+//                    changeRequest?.displayName = userName
+//                    changeRequest?.commitChanges(completion: { (error) in
+//                        if error == nil {
+//                            print("User display name changed! User: \(userName ?? "")")
+//
+//                            let alert = UIAlertController(title: "Successfully Logged in with Facebook!", message: "Welcome \(userName ?? ""), Email: \(email)", preferredStyle: .alert)
+//
+//                            alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
+//
+//                            self.present(alert, animated: true)
+//                        }
+//                    })
+//                }
+                    self.navigationController?.pushViewController(self.menuView, animated: true)
+                    print("Successfully logged in with our user: ", user ?? "")
                 }
-                if let user = Auth.auth().currentUser {
-                    let userName = user.displayName
-                    let email = user.email!
-                    
-                    let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                    changeRequest?.displayName = userName
-                    changeRequest?.commitChanges(completion: { (error) in
-                        if error == nil {
-                            print("User display name changed! User: \(userName ?? "")")
-                            
-                            let alert = UIAlertController(title: "Successfully Logged in with Facebook!", message: "Welcome \(userName ?? ""), Email: \(email)", preferredStyle: .alert)
-                            
-                            alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
-                            
-                            self.present(alert, animated: true)
-                        }
-                    })
-                }
-                print("Successfully logged in with our user: ", user ?? "")
             }
         })
     }
@@ -279,16 +460,6 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
         FBSDKLoginManager().logOut()
         print("Did log out of Facebook")
     }
-    
-//    @objc func handleCustomFBLogin() {
-//        FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
-//            if err != nil {
-//                print("Custom FB login failed:", err as Any)
-//                return
-//            }
-//            self.showEmailAddress()
-//        }
-//    }
 }
 
 extension LoginViewController: GADBannerViewDelegate {
@@ -370,6 +541,8 @@ extension LoginViewController: UITextFieldDelegate {
     //MARK: - Controlling the Keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
+        case userField:
+            emailField.becomeFirstResponder()
         case emailField:
             passwordField.becomeFirstResponder()
         case passwordField:
