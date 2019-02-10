@@ -8,9 +8,16 @@
 
 import UIKit
 import Fabric
+import Firebase
+import FirebaseAuth
+import GoogleSignIn
+import FBSDKLoginKit
+
+var loginVsSignup = UInt()
 
 class HomeController: UIViewController {
     
+    private let vc = LoginViewController()
     private var stackView: UIStackView!
     private var buttonStackView: UIStackView!
     
@@ -65,6 +72,20 @@ class HomeController: UIViewController {
         return imageView
     }()
     
+    private let signInGuest: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .mainBlue
+        button.setTitle("Guest Sign In", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        button.layer.cornerRadius = 5.0
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.white.cgColor
+        button.addTarget(self, action: #selector(signInAnonymously), for: .touchUpInside)
+        return button
+    }()
+    
     private let signUpButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -105,6 +126,13 @@ class HomeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         
+        if Auth.auth().currentUser != nil {
+            let menuView = MenuCollectionVC()
+            navigationController?.pushViewController(menuView, animated: true)
+        } else {
+            //User Not logged in
+            
+        }
     }
     
     override func viewDidLoad() {
@@ -158,7 +186,7 @@ class HomeController: UIViewController {
     }
     
     private func setupStackView() {
-        buttonStackView = UIStackView(arrangedSubviews: [signUpButton, loginButton])
+        buttonStackView = UIStackView(arrangedSubviews: [signInGuest, signUpButton, loginButton])
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         buttonStackView.distribution = .fillEqually
         buttonStackView.spacing = 16
@@ -170,17 +198,41 @@ class HomeController: UIViewController {
             buttonStackView.bottomAnchor.constraint(equalTo: creatorLabel.topAnchor, constant: -60),
             buttonStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
             buttonStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            buttonStackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.12)
+            buttonStackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2) //0.12)
             ])
     }
     
+    @objc private func signInAnonymously() {
+        Auth.auth().signInAnonymously() { (authResult, error) in
+            if let err = error {
+                print(err.localizedDescription)
+            } else {
+                let user = authResult?.user
+                let isAnonymous = user?.isAnonymous  // true
+                let uid = user?.uid
+                print("User: ", user ?? "")
+                print("isAnonymous: ", isAnonymous ?? "")
+                print("UID: ", uid ?? "")
+                let mainMenuVC = MenuCollectionVC()
+                self.navigationController?.pushViewController(mainMenuVC, animated: true)
+            }
+        }
+    }
+    
     @objc private func tappedSignUpButton() {
-        let vc = SignUpViewController() //your view controller
-        self.navigationController?.pushViewController(vc, animated: true)
+        loginVsSignup = 1
+        print(loginVsSignup)
+        segueToLoginScreen()
     }
     
     @objc private func tappedLoginButton() {
-        let vc = LoginViewController() //your view controller
+        loginVsSignup = 2
+        print(loginVsSignup)
+        segueToLoginScreen()
+    }
+    
+    private func segueToLoginScreen() {
+         //your view controller
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
