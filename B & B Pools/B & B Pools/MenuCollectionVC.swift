@@ -9,14 +9,25 @@
 import UIKit
 import LBTAComponents
 import GoogleMobileAds
+import FirebaseAuth
+import FBSDKLoginKit
+
+private let cellId = "cellId"
 
 class MenuCollectionVC: DatasourceController {
     
     private var bannerView: GADBannerView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.navigationBar.tintColor = .white
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(handleLogout))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        self.navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.title = "Main Menu"
         
         let homeDatasource = HomeDatasource()
@@ -24,6 +35,30 @@ class MenuCollectionVC: DatasourceController {
         
         handleAdRequest()
         collectionView.backgroundColor = .white
+    }
+    
+    
+    
+    @objc private func handleLogout() {
+        
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            FBSDKLoginManager().logOut()
+            let vc = HomeController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: MenuDetailsCell
+        
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MenuDetailsCell
+        
+//        cell.collectionView = 
+        return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
