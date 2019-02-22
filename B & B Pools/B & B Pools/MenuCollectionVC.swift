@@ -37,8 +37,6 @@ class MenuCollectionVC: DatasourceController {
         collectionView.backgroundColor = .white
     }
     
-    
-    
     @objc private func handleLogout() {
         
         let firebaseAuth = Auth.auth()
@@ -50,6 +48,11 @@ class MenuCollectionVC: DatasourceController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let menuDetailsVC = MenuDetailsCollectionVC()
+        self.showDetailViewController(menuDetailsVC, sender: self)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
