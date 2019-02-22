@@ -10,8 +10,6 @@ import LBTAComponents
 
 class HomeDatasource: Datasource {
     
-    let names = ["Pool Shapes", "Liner Patterns", "Fiberglass", "Waterfalls", "Fireplaces", "Furniture", "Loungers", "Fire Pits", "Fences", "Grills", "Service", "Financing", "Facebook", "B & B Website", "Instagram"]
-    
     override func headerClasses() -> [DatasourceCell.Type]? {
         return [UserHeader.self]
     }
