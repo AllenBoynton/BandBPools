@@ -30,6 +30,7 @@
 		0FD0DEFD21FE27E200DD49F8 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0DEFC21FE27E100DD49F8 /* Cells.swift */; };
 		0FD0DF05220668B000DD49F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0DF04220668B000DD49F8 /* LoginViewController.swift */; };
 		0FD0DF0922069E0A00DD49F8 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0DF0822069E0A00DD49F8 /* UnderlineTextField.swift */; };
+		0FDA287F22125748006F51DB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA287E22125748006F51DB /* Helpers.swift */; };
 		0FE54AFD216FD11400BB725A /* MenuCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE54AFC216FD11400BB725A /* MenuCollectionVC.swift */; };
 		0FE54B012170047400BB725A /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE54B002170047400BB725A /* Constraints.swift */; };
 		67AC555605636A245CD42E70 /* Pods_B___B_Pools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1112E17EF812BDD1DB7D7F61 /* Pods_B___B_Pools.framework */; };
@@ -62,6 +63,7 @@
 		0FD0DEFE21FE807D00DD49F8 /* B & B Pools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "B & B Pools.entitlements"; sourceTree = "<group>"; };
 		0FD0DF04220668B000DD49F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0FD0DF0822069E0A00DD49F8 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
+		0FDA287E22125748006F51DB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		0FE54AFC216FD11400BB725A /* MenuCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionVC.swift; sourceTree = "<group>"; };
 		0FE54B002170047400BB725A /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		1112E17EF812BDD1DB7D7F61 /* Pods_B___B_Pools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_B___B_Pools.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 				0FD0DEFE21FE807D00DD49F8 /* B & B Pools.entitlements */,
 				0F4503D0210D447D00BF296F /* Utilities */,
 				0F0B309C210C16D900F59639 /* AppDelegate */,
+				0FDA288022125753006F51DB /* Helpers */,
 				0F0B309E210C171000F59639 /* Model */,
 				0F0B30A3210C2BBC00F59639 /* View */,
 				0F0B309D210C16FC00F59639 /* Controller */,
@@ -157,7 +160,6 @@
 				0F4503C4210C2D5500BF296F /* DropShadow.swift */,
 				0F4503C1210C2D5500BF296F /* MaterialView.swift */,
 				0F05FD4A214B355E00F2D0CA /* RGB.swift */,
-				0F05FD46214B302100F2D0CA /* UITextFieldPadding.swift */,
 				0F05FD48214B34AB00F2D0CA /* UIView.swift */,
 				0FE54B002170047400BB725A /* Constraints.swift */,
 				0FD0DEF821FE166100DD49F8 /* KeyboardExt.swift */,
@@ -169,6 +171,7 @@
 		0F0B30A3210C2BBC00F59639 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F05FD46214B302100F2D0CA /* UITextFieldPadding.swift */,
 				0FC82372220D1955005D5104 /* BaseCell.swift */,
 				0FD0DEFC21FE27E100DD49F8 /* Cells.swift */,
 				0FC82374220D199A005D5104 /* DetailsAppCell */,
@@ -211,6 +214,14 @@
 				0FC82375220D1A81005D5104 /* MenuDetailsCell.swift */,
 			);
 			path = DetailsAppCell;
+			sourceTree = "<group>";
+		};
+		0FDA288022125753006F51DB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA287E22125748006F51DB /* Helpers.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		86AA4F53A25E4011589FD1C5 /* Frameworks */ = {
@@ -430,6 +441,7 @@
 				0FE54AFD216FD11400BB725A /* MenuCollectionVC.swift in Sources */,
 				0F4503CA210C2D5500BF296F /* DropShadow.swift in Sources */,
 				0F4503C9210C2D5500BF296F /* DesignableImageViews.swift in Sources */,
+				0FDA287F22125748006F51DB /* Helpers.swift in Sources */,
 				0F0B307D210C16B100F59639 /* AppDelegate.swift in Sources */,
 				0F05FD47214B302100F2D0CA /* UITextFieldPadding.swift in Sources */,
 				0FD0DF05220668B000DD49F8 /* LoginViewController.swift in Sources */,
