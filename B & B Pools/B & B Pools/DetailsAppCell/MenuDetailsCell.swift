@@ -42,9 +42,9 @@ class MenuDetailsCell: BaseCell, UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ImageCell
-        
+
         cell.imageView.image = UIImage(named: "Liner Patterns")
-        
+
         return cell
     }
     
