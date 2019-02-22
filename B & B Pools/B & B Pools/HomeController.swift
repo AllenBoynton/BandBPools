@@ -13,8 +13,6 @@ import FirebaseAuth
 import GoogleSignIn
 import FBSDKLoginKit
 
-var loginVsSignup = UInt()
-
 class HomeController: UIViewController {
     
     private let vc = LoginViewController()
