@@ -12,6 +12,11 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 import FBSDKLoginKit
+//import SnapKit
+
+// label.snp.makeConstraints { (maker) in
+//    maker.centerX.centerY.equalToSuperView()
+// }
 
 class HomeController: UIViewController {
     
